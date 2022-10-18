@@ -4,6 +4,7 @@ namespace Kanboard\Plugin\KanboardEmailHistory\Action;
 
 use Kanboard\Model\TaskModel;
 use Kanboard\Model\CommentModel;
+use Kanboard\Model\UserMetadataModel;
 use Kanboard\Action\Base;
 
 class EmailTaskHistory extends Base
@@ -37,13 +38,18 @@ class EmailTaskHistory extends Base
     {
         return array(
             'task',
-            'comment',
+            //these are event parameters and the task close event does not have a comment parameter
         );
     }
 
     
     public function doAction(array $data)
     {
+        //here is where we will pull all the comments from a task using the same method in the TaskViewController, note we would need to add the user metadata model up above in "use"
+        $commentSortingDirection = $this->userMetadataCacheDecorator->get(UserMetadataModel::KEY_COMMENT_SORTING_DIRECTION, 'ASC');
+        $comments = $this->commentModel->getAll($data['task']['id'], $commentSortingDirection);
+        
+        //Noticing you have are using a lot of undefined variables below, example $task, $project, $comments. I defined $comments above, and will fix the others
         $historySent = FALSE;
         if ($this->getParam('check_box_include_title') == true ){
             $subject = $this->getParam('subject') . ": " . $data['task']['title'] . "(#" . $data['task']['id'] . ")";
@@ -62,20 +68,22 @@ class EmailTaskHistory extends Base
                         $user['email'],
                         $user['name'] ?: $user['username'],
                         $subject,
-                        <?= $this->template->render('task_comments/show', array(
-                        	'task' => $task,
+                        $this->template->render('task_comments/show', array(
+                        	'task' => $data['task'],
                         	'comments' => $comments,
-                        	'project' => $project,
+                        	'project' => $this->projectModel->getById($data['task']['project_id']),
                         	'editable' => false,
                         ))
                     );
                     // Add comment to task to show an email has been fired
                     $this->commentModel->create( array(
-                    	'comment' => t('Task history emailed to "%s" with subject "%s".', $values['email'], $values['subject']),
-                    	'user_id' => $user,
-                    	'task_id' => $task['id'],
+                    	'comment' => t('Task history emailed to '.$user['username'].' with subject '. $subject),
+                    	'user_id' => $user['id'],
+                    	'task_id' => $data['task']['id'],
                     ));
                     $historySent = TRUE;
+                    //an easy way to test code is to use error_log, assuming you know how to check your error logs
+                    error_log("I worked",0);
                 } 
             }
             if ($send_to == 'creator' || $send_to == 'both') {
@@ -87,20 +95,21 @@ class EmailTaskHistory extends Base
                         $user['email'],
                         $user['name'] ?: $user['username'],
                         $subject,
-                        <?= $this->template->render('task_comments/show', array(
-                        	'task' => $this->getTask(),
-                        	'comments' => $this->commentModel->getAll($task['id'], $commentSortingDirection),
-                        	'project' => $this->projectModel->getById($task['project_id']),
+                        $this->template->render('task_comments/show', array(
+                        	'task' => $data['task'],
+                        	'comments' => $comments,
+                        	'project' => $this->projectModel->getById($data['task']['project_id']),
                         	'editable' => false,
                         ))
                     );
                     // Add comment to task to show an email has been fired
                     $this->commentModel->create( array(
-                    	'comment' => t('Task history emailed to "%s" with subject "%s".', $values['email'], $values['subject']),
-                    	'user_id' => $user,
-                    	'task_id' => $task['id'],
+                    	'comment' => t('Task history emailed to '.$user['username'].' with subject '. $subject),
+                    	'user_id' => $user['id'],
+                    	'task_id' => $data['task']['id'],
                     ));
                     $historySent = TRUE;
+                    error_log("I worked",0);
                 } 
             }
         return $historySent;
