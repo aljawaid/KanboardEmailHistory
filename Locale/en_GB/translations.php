@@ -6,4 +6,5 @@ return array(
   'Send to Creator' => 'Send to Creator',
   'Send to Both' => 'Send to Both',
   'Include Task Title and ID in subject line?' => 'Include Task Title and ID in the subject line?',
+  'Task history emailed to "%s" with subject "%s".' => 'Task history emailed to "%s" with subject "%s".',
 );
