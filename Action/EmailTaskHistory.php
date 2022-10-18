@@ -57,6 +57,7 @@ class EmailTaskHistory extends Base
                 $user = $this->userModel->getById($data['task']['owner_id']);
     
                 if (! empty($user['email'])) {
+                    // Send email
                     $this->emailClient->send(
                         $user['email'],
                         $user['name'] ?: $user['username'],
@@ -68,6 +69,7 @@ class EmailTaskHistory extends Base
                         	'editable' => false,
                         ))
                     );
+                    // Add comment to task to show an email has been fired
                     $this->commentModel->create( array(
                     	'comment' => t('Task history emailed to "%s" with subject "%s".', $values['email'], $values['subject']),
                     	'user_id' => $user,
@@ -80,6 +82,7 @@ class EmailTaskHistory extends Base
                 $user = $this->userModel->getById($data['task']['creator_id']);
     
                 if (! empty($user['email'])) {
+                    // Send email
                     $this->emailClient->send(
                         $user['email'],
                         $user['name'] ?: $user['username'],
@@ -91,6 +94,7 @@ class EmailTaskHistory extends Base
                         	'editable' => false,
                         ))
                     );
+                    // Add comment to task to show an email has been fired
                     $this->commentModel->create( array(
                     	'comment' => t('Task history emailed to "%s" with subject "%s".', $values['email'], $values['subject']),
                     	'user_id' => $user,
