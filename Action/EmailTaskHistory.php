@@ -4,6 +4,7 @@ namespace Kanboard\Plugin\KanboardEmailHistory\Action;
 
 use Kanboard\Model\TaskModel;
 use Kanboard\Model\CommentModel;
+use Kanboard\Model\ProjectModel;
 use Kanboard\Model\UserMetadataModel;
 use Kanboard\Action\Base;
 
