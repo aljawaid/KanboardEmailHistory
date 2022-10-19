@@ -16,7 +16,7 @@ class Plugin extends Base
         
 		$this->actionManager->register(new EmailTaskHistory($this->container));
 		
-		if (!file_exists('plugins/Subtaskdate')) {
+		if (!file_exists('plugins/AutoSubtasks')) {
 		    $this->template->setTemplateOverride('action_creation/params', 'kanboardEmailHistory:action_creation/params');
 		}
     
