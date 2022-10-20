@@ -64,26 +64,30 @@ class EmailTaskHistory extends Base
                 $user = $this->userModel->getById($data['task']['owner_id']);
     
                 if (! empty($user['email'])) {
+                    $myHTML = $this->template->render('notification/task_create', array('task' => $data['task']));
+                    $myHTML = $myHTML . $this->template->render('task_comments/show', array(
+                                            'task' => $data['task'],
+                                            'comments' => $comments,
+                                            'project' => $this->projectModel->getById($data['task']['project_id']),
+                                            'editable' => false,
+                                        ));
+                    $myHTML = $myHTML . $this->template->render('notification/footer', array('task' => $data['task']));
+                    
                     // Send email
                     $this->emailClient->send(
                         $user['email'],
                         $user['name'] ?: $user['username'],
                         $subject,
-                        $this->template->render('notification/task_create', array('task' => $task))
-                        $this->template->render('task_comments/show', array(
-                        	'task' => $data['task'],
-                        	'comments' => $comments,
-                        	'project' => $this->projectModel->getById($data['task']['project_id']),
-                        	'editable' => false,
-                        )),
-                        $this->template->render('notification/footer', array('task' => $task))
+                        $myHTML
                     );
+
                     // Add comment to task to show an email has been fired
                     $this->commentModel->create( array(
                     	'comment' => t('Task history emailed to the task assignee '.$user['username'].' with subject <code>'. $subject).'</code>',
                     	'user_id' => $user['id'],
                     	'task_id' => $data['task']['id'],
                     ));
+                    
                     $historySent = TRUE;
                     //an easy way to test code is to use error_log, assuming you know how to check your error logs
                     error_log("I worked",0);
@@ -93,26 +97,30 @@ class EmailTaskHistory extends Base
                 $user = $this->userModel->getById($data['task']['creator_id']);
     
                 if (! empty($user['email'])) {
+                    $myHTML = $this->template->render('notification/task_create', array('task' => $data['task']));
+                    $myHTML = $myHTML . $this->template->render('task_comments/show', array(
+                                            'task' => $data['task'],
+                                            'comments' => $comments,
+                                            'project' => $this->projectModel->getById($data['task']['project_id']),
+                                            'editable' => false,
+                                        ));
+                    $myHTML = $myHTML . $this->template->render('notification/footer', array('task' => $data['task']));
+
                     // Send email
                     $this->emailClient->send(
                         $user['email'],
                         $user['name'] ?: $user['username'],
                         $subject,
-                        $this->template->render('notification/task_create', array('task' => $task))
-                        $this->template->render('task_comments/show', array(
-                        	'task' => $data['task'],
-                        	'comments' => $comments,
-                        	'project' => $this->projectModel->getById($data['task']['project_id']),
-                        	'editable' => false,
-                        )),
-                        $this->template->render('notification/footer', array('task' => $task))
+                        $myHTML
                     );
+
                     // Add comment to task to show an email has been fired
                     $this->commentModel->create( array(
                     	'comment' => t('Task history emailed to the task creator '.$user['username'].' with subject <code>'. $subject).'</code>',
                     	'user_id' => $user['id'],
                     	'task_id' => $data['task']['id'],
                     ));
+
                     $historySent = TRUE;
                     error_log("I worked",0);
                 } 
