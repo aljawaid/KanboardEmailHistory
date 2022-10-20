@@ -83,7 +83,7 @@ class EmailTaskHistory extends Base
 
                     // Add comment to task to show an email has been fired
                     $this->commentModel->create( array(
-                    	'comment' => t('Task history emailed to the task assignee '.$user['username'].' with subject <code>'. $subject).'</code>',
+                    	'comment' => t('Task history emailed to the task assignee @'.$user['username'].' with subject "'. $subject).'".',
                     	'user_id' => $user['id'],
                     	'task_id' => $data['task']['id'],
                     ));
@@ -116,7 +116,7 @@ class EmailTaskHistory extends Base
 
                     // Add comment to task to show an email has been fired
                     $this->commentModel->create( array(
-                    	'comment' => t('Task history emailed to the task creator '.$user['username'].' with subject <code>'. $subject).'</code>',
+                    	'comment' => t('Task history emailed to the task creator @'.$user['username'].' with subject "'. $subject).'".',
                     	'user_id' => $user['id'],
                     	'task_id' => $data['task']['id'],
                     ));
