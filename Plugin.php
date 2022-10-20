@@ -19,6 +19,12 @@ class Plugin extends Base
 		if (!file_exists('plugins/AutoSubtasks')) {
 		    $this->template->setTemplateOverride('action_creation/params', 'kanboardEmailHistory:action_creation/params');
 		}
+
+		//Task Comments
+        	$this->template->setTemplateOverride('notification/task_create', 'kanboardEmailHistory:notification/task_create');
+        	$this->template->setTemplateOverride('task_comments/show', 'kanboardEmailHistory:task_comments/show');
+        	$this->template->setTemplateOverride('comment/show', 'kanboardEmailHistory:comment/show');
+        	$this->template->setTemplateOverride('notification/footer', 'kanboardEmailHistory:notification/footer');
     
 		
 	}
