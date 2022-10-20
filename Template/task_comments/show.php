@@ -1,9 +1,10 @@
 <details class="accordion-section" <?= empty($comments) ? '' : 'open' ?>>
     <summary class="accordion-title acc-comments-title">
-        <h3><?= t('Comments') ?></h3>
-        <?php if (! empty($comments)): ?>
-            <span class="">(<?= count($comments) ?>)</span>
-        <?php endif ?>
+        <h3 style="margin: 0; display: inline;"><?= t('Comments') ?>
+            <?php if (! empty($comments)): ?>
+                <span class="">(<?= count($comments) ?>)</span>
+            <?php endif ?>
+        </h3>
     </summary>
     <div class="accordion-content comments" id="comments">
         <?php if (empty($comments)): ?>
