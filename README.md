@@ -3,7 +3,7 @@
 Automatic Action Plugin for Kanboard
 ==========================
 
-This action plugin adds new actions to the Kanboard user workflow process.
+This action plugin adds a new action to the Kanboard user workflow process.
 
 Automatic Action for [Kanboard](https://github.com/fguillot/kanboard "Kanboard - Kanban project management software")
 
