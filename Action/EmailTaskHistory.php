@@ -64,14 +64,14 @@ class EmailTaskHistory extends Base
                 $user = $this->userModel->getById($data['task']['owner_id']);
     
                 if (! empty($user['email'])) {
-                    $myHTML = $this->template->render('notification/task_create', array('task' => $data['task']));
-                    $myHTML = $myHTML . $this->template->render('task_comments/show', array(
+                    $myHTML = $this->template->render('kanboardEmailHistory:notification/task_create', array('task' => $data['task']));
+                    $myHTML = $myHTML . $this->template->render('kanboardEmailHistory:task_comments/show', array(
                                             'task' => $data['task'],
                                             'comments' => $comments,
                                             'project' => $this->projectModel->getById($data['task']['project_id']),
                                             'editable' => false,
                                         ));
-                    $myHTML = $myHTML . $this->template->render('notification/footer', array('task' => $data['task']));
+                    $myHTML = $myHTML . $this->template->render('kanboardEmailHistory:notification/footer', array('task' => $data['task']));
                     
                     // Send email
                     $this->emailClient->send(
@@ -97,14 +97,14 @@ class EmailTaskHistory extends Base
                 $user = $this->userModel->getById($data['task']['creator_id']);
     
                 if (! empty($user['email'])) {
-                    $myHTML = $this->template->render('notification/task_create', array('task' => $data['task']));
-                    $myHTML = $myHTML . $this->template->render('task_comments/show', array(
+                    $myHTML = $this->template->render('kanboardEmailHistory:notification/task_create', array('task' => $data['task']));
+                    $myHTML = $myHTML . $this->template->render('kanboardEmailHistory:task_comments/show', array(
                                             'task' => $data['task'],
                                             'comments' => $comments,
                                             'project' => $this->projectModel->getById($data['task']['project_id']),
                                             'editable' => false,
                                         ));
-                    $myHTML = $myHTML . $this->template->render('notification/footer', array('task' => $data['task']));
+                    $myHTML = $myHTML . $this->template->render('kanboardEmailHistory:notification/footer', array('task' => $data['task']));
 
                     // Send email
                     $this->emailClient->send(
