@@ -13,21 +13,25 @@ Main Features
 
 - EmailTaskHistory
   - Upon closing tasks, email the full task description and history of comments to the task creator, assignee or both
-- Translations
-  - English (UK), French, German
+
+
+Translations
+------------
+
+- English (UK), French, German
 
 
 Compatibility
 -------------
 
- - Requires Kanboard ≥`1.2.20`
+- Requires Kanboard ≥`1.2.20`
 
 
 Changelog
 ---------
 
- - All notable style changes are listed in the [Changelog](../main/changelog.md "See changes")
-
+[**Full Changelog**](../main/changelog.md "See changes")
+ 
 
 Installation
 ------------
@@ -55,4 +59,3 @@ Authors & Contributors
 License
 -------
 - This project is distributed under [The Unlicense](../main/LICENSE "Read The Unlicense")
-
