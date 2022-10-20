@@ -13,7 +13,7 @@
         
         <hr>
         <?php foreach ($comments as $comment): ?>
-            <?= $this->render('comment/show', array(
+            <?= $this->render('kanboardEmailHistory:comment/show', array(
                 'comment'   => $comment,
                 'task'      => $task,
                 'project'   => $project,
