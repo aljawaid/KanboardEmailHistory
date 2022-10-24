@@ -1,6 +1,17 @@
 # KanboardEmailHistory Changelog
 
-## v1.0
+## v1.1 - 24 October 2022
+
+### What's Changed
+
+_(most recent changes are listed on top):_
+
+* 9f6ccc1 FIX: Plugin Name (was action name)
+* e87c332 FIX: Rename Release version filename
+* fd38a00 Add Releases folder
+
+---
+## v1.0 - 21 October 2022
 
 ### What's Changed
 
