@@ -20,23 +20,23 @@ Usage
 
 From _Project_ Go to: **Configure this project**  
 
-![Screenshot](../Docs/usage-1.png "Configure this project")
+![Screenshot](../main/Docs/usage-1.png "Configure this project")
 
 _Select:_ **Automatic Actions**
 
-![Screenshot](../Docs/usage-2.png "Automatic Actions")
+![Screenshot](../main/Docs/usage-2.png "Automatic Actions")
 
 _Select:_ **Send full task description and comments by email**
 
-![Screenshot](../Docs/usage-3.png "Send full task description and comments by email")
+![Screenshot](../main/Docs/usage-3.png "Send full task description and comments by email")
 
 _Enter to the next screen_
 
-![Screenshot](../Docs/usage-4.png "Options are pre-filled")
+![Screenshot](../main/Docs/usage-4.png "Options are pre-filled")
 
 _Enter:_ **Parameter values for the action**
 
-![Screenshot](../Docs/usage-5.png "Define parameter values")
+![Screenshot](../main/Docs/usage-5.png "Define parameter values")
 
 
 Translations
