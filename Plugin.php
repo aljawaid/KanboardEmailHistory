@@ -30,7 +30,7 @@ class Plugin extends Base
 	
 	public function getPluginName()	
 	{ 		 
-		return 'EmailTaskHistory'; 
+		return 'KanboardEmailHistory'; 
 	}
 
 	public function getPluginAuthor() 
