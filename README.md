@@ -12,13 +12,38 @@ Main Features
 -------------
 
 - EmailTaskHistory
-  - Upon closing tasks, email the full task description and history of comments to the task creator, assignee or both
+Upon closing tasks, email the full task description and history of comments to the task creator, assignee or both
+
+
+Usage
+----------
+
+From _Project_ Go to: **Configure this project**  
+
+![Screenshot](../Docs/screenshot-1.png "Configure this project")
+
+_Select:_ **Automatic Actions**
+
+![Screenshot](../Docs/screenshot-2.png "Automatic Actions")
+
+_Select:_ **Send full task description and comments by email**
+
+![Screenshot](../Docs/screenshot-3.png "Send full task description and comments by email")
+
+_Enter to the next screen_
+
+![Screenshot](../Docs/screenshot-4.png "Options are pre-filled")
+
+_Enter:_ **Parameter values for the action**
+
+![Screenshot](../Docs/screenshot-5.png "Define parameter values")
 
 
 Translations
 ------------
 
 - English (UK), French, German
+- _Contributors welcome_
 
 
 Compatibility
@@ -52,8 +77,9 @@ Note: Plugin folder is case-sensitive.
 Authors & Contributors
 ----------------------
 
-- Aljawaid
+- @aljawaid
 - Craig Crosby @creecros
+- _Contributors welcome_
 
 
 License
