@@ -1,5 +1,14 @@
 # KanboardEmailHistory Changelog
 
+## v1.2 - 24 October 2022
+
+### What's Changed
+
+_(most recent changes are listed on top):_
+
+* 1592902 FIX: Plugin Version
+
+---
 ## v1.1 - 24 October 2022
 
 ### What's Changed
