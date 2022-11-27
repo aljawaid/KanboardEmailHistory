@@ -15,7 +15,6 @@ class EmailTaskHistory extends Base
     {
         return t('Send full task description and comments by email');
     }
-
    
     public function getCompatibleEvents()
     {
@@ -23,7 +22,6 @@ class EmailTaskHistory extends Base
             TaskModel::EVENT_CLOSE,
         );
     }
-
    
     public function getActionRequiredParameters()
     {
@@ -33,7 +31,6 @@ class EmailTaskHistory extends Base
 	        'check_box_include_title' => t('Include Task Title and ID in subject line?'),
         );
     }
-
    
     public function getEventRequiredParameters()
     {
@@ -42,7 +39,6 @@ class EmailTaskHistory extends Base
             // These are event parameters and the task close event does not have a comment parameter
         );
     }
-
     
     public function doAction(array $data)
     {
@@ -54,15 +50,20 @@ class EmailTaskHistory extends Base
         $historySent = FALSE;
 
         // SUBJECT OPTIONS
-        if ($this->getParam('check_box_include_title') == true ){
+        if ($this->getParam('check_box_include_title') == true ) {
             $subject = $this->getParam('subject') . ": " . $data['task']['title'] . " (#" . $data['task']['id'] . ")";
         } else {
             $subject = $this->getParam('subject');
         }
         
-        // CONSTRUCT EMAIL -
-        if ($this->getParam('send_to') !== null) { $send_to = $this->getParam('send_to'); } else { $send_to = 'both'; }
+        // CONSTRUCT EMAIL - SEND TO SELECTED OR BOTH
+        if ($this->getParam('send_to') !== null) {
+            $send_to = $this->getParam('send_to');
+        } else {
+            $send_to = 'both';
+        }
         
+            // CONSTRUCT EMAIL - SEND TO 'ASSIGNEE' OR BOTH
             if ($send_to == 'assignee' || $send_to == 'both') {
                 $user = $this->userModel->getById($data['task']['owner_id']);
     
@@ -98,6 +99,7 @@ class EmailTaskHistory extends Base
                 } 
             }
 
+            // CONSTRUCT EMAIL - SEND TO 'CREATOR' OR BOTH
             if ($send_to == 'creator' || $send_to == 'both') {
                 $user = $this->userModel->getById($data['task']['creator_id']);
     
@@ -140,4 +142,3 @@ class EmailTaskHistory extends Base
         return true;
     }
 }
-
