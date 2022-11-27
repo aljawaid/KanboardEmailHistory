@@ -4,6 +4,7 @@
 ## v1.5 _(unreleased)_
 _(most recent changes are listed on top):_
 - Rename branch from `main` to `master`
+- Major cleanup of code
 
 
 ## v1.2
@@ -28,7 +29,7 @@ _(most recent changes are listed on top):_
 ### What's Changed
 
 _(most recent changes are listed on top):_
-- Initial release
+- Initial release - thanks @creecros
 - Cleanup code
 - Update README.md
 - NEW: Add Translations- Added French, German (used Google Translate for translations)
