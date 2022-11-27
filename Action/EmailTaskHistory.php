@@ -28,7 +28,9 @@ class EmailTaskHistory extends Base
         return array(
 	        'subject' => t('Email subject'),
 	        'send_to' => array('assignee' => t('Send to Assignee'), 'creator' => t('Send to Creator'), 'both' => t('Send to Both')),
-	        'check_box_include_title' => t('Include Task Title and ID in subject line?'),
+	        'check_box_include_title' => t('Include the Task Title and ID in the subject line?'),
+            'check_box_include_project' => t('Include the Project Name in the subject line?'),
+            'check_box_include_project_identifier' => t('Include the Project Identifier in the subject line?'),
         );
     }
    
@@ -51,8 +53,18 @@ class EmailTaskHistory extends Base
 
         // SUBJECT OPTIONS
         if ($this->getParam('check_box_include_title') == true ) {
+            // TASK TITLE // Subject becomes: `subject` `task title` `task id`
             $subject = $this->getParam('subject') . ": " . $data['task']['title'] . " (#" . $data['task']['id'] . ")";
+        } elseif ($this->getParam('check_box_include_project') == true ) {
+            // PROJECT NAME // Subject becomes: `subject` `project name` `task title` `task id`
+            $project = $this->projectModel->getById($project_id);
+            $subject = $this->getParam('subject') . ": " $project['name'] . " " . $data['task']['title'] . " (#" . $data['task']['id'] . ")";
+        } elseif ($this->getParam('check_box_include_project_identifier') == true ) {
+            // PROJECT IDENTIFIER // Subject becomes: `subject` `project identifier` `task title` `task id`
+            $project = $this->projectModel->getById($project_id);
+            $subject = $this->getParam('subject') . ": " $project['identifier'] . " " . $data['task']['title'] . " (#" . $data['task']['id'] . ")";
         } else {
+            // NO SELECTION // Subject becomes: `subject`
             $subject = $this->getParam('subject');
         }
         
