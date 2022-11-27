@@ -13,7 +13,7 @@ class EmailTaskHistory extends Base
    
     public function getDescription()
     {
-        return t('Send full task description and comments by email');
+        return t('EmailTaskHistory > Send task description and complete comment history by email on task closure');
     }
    
     public function getCompatibleEvents()

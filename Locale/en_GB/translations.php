@@ -1,6 +1,8 @@
 <?php
 return array(
-  'Send full task description and comments by email' => 'Send full task description and comments by email',
+  'This action plugin adds a new action to the Kanboard user workflow process. Upon closing tasks, automatically email the task description and full history of comments to selected recipients.' => 'This action plugin adds a new action to the Kanboard user workflow process. Upon closing tasks, automatically email the task description and full history of comments to selected recipients.',
+  //'Send full task description and comments by email' => 'Send full task description and comments by email',
+  'EmailTaskHistory > Send task description and complete comment history by email on task closure' => 'EmailTaskHistory > Send task description and complete comment history by email on task closure',
   'Email subject' => 'Email Subject',
   'Send to Assignee' => 'Send to Assignee',
   'Send to Creator' => 'Send to Creator',
