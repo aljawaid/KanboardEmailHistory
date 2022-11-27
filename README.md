@@ -15,18 +15,23 @@ Screenshots
 ----------
 
 **Configure this project**
+
 ![Configure this project](../master/Screenshots/usage-1.png "Configure this project")
 
 **Automatic Actions**
+
 ![Automatic Actions](../master/Screenshots/usage-2.png "Automatic Actions")
 
 **Send full task description and comments by email**
+
 ![Send full task description and comments by email](../master/Screenshots/usage-3.png "Send full task description and comments by email")
 
 **Options are pre-filled**
+
 ![Options are pre-filled](../master/Screenshots/usage-4.png "Options are pre-filled")
 
 **Define parameter values**
+
 ![Define parameter values](../master/Screenshots/usage-5.png "Define parameter values")
 
 
