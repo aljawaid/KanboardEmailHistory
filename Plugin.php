@@ -43,6 +43,15 @@ class Plugin extends Base
 		return '1.2.0'; 
 	}
 
+    	public function getCompatibleVersion()
+    	{
+        	// Examples:
+        	// >=1.0.37
+        	// <1.0.37
+        	// <=1.0.37
+        	return '>=1.2.20';
+    	}	
+
 	public function getPluginDescription() 
 	{ 
 		return 'Action to email the full history of a task on closure'; 

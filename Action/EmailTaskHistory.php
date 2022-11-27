@@ -21,7 +21,7 @@ class EmailTaskHistory extends Base
     {
         return array(
             TaskModel::EVENT_CLOSE,
-	);
+        );
     }
 
    
@@ -39,25 +39,28 @@ class EmailTaskHistory extends Base
     {
         return array(
             'task',
-            //these are event parameters and the task close event does not have a comment parameter
+            // These are event parameters and the task close event does not have a comment parameter
         );
     }
 
     
     public function doAction(array $data)
     {
-        //here is where we will pull all the comments from a task using the same method in the TaskViewController, note we would need to add the user metadata model up above in "use"
+        // TASK COMMENTS
+        // here is where we will pull all the comments from a task using the same method in the TaskViewController, note we would need to add the user metadata model up above in "use"
         $commentSortingDirection = $this->userMetadataCacheDecorator->get(UserMetadataModel::KEY_COMMENT_SORTING_DIRECTION, 'ASC');
         $comments = $this->commentModel->getAll($data['task']['id'], $commentSortingDirection);
         
-        //Noticing you have are using a lot of undefined variables below, example $task, $project, $comments. I defined $comments above, and will fix the others
         $historySent = FALSE;
+
+        // SUBJECT OPTIONS
         if ($this->getParam('check_box_include_title') == true ){
             $subject = $this->getParam('subject') . ": " . $data['task']['title'] . " (#" . $data['task']['id'] . ")";
         } else {
             $subject = $this->getParam('subject');
         }
         
+        // CONSTRUCT EMAIL -
         if ($this->getParam('send_to') !== null) { $send_to = $this->getParam('send_to'); } else { $send_to = 'both'; }
         
             if ($send_to == 'assignee' || $send_to == 'both') {
@@ -66,11 +69,11 @@ class EmailTaskHistory extends Base
                 if (! empty($user['email'])) {
                     $myHTML = $this->template->render('kanboardEmailHistory:notification/task_create', array('task' => $data['task']));
                     $myHTML = $myHTML . $this->template->render('kanboardEmailHistory:task_comments/show', array(
-                                            'task' => $data['task'],
-                                            'comments' => $comments,
-                                            'project' => $this->projectModel->getById($data['task']['project_id']),
-                                            'editable' => false,
-                                        ));
+                        'task' => $data['task'],
+                        'comments' => $comments,
+                        'project' => $this->projectModel->getById($data['task']['project_id']),
+                        'editable' => false,
+                    ));
                     $myHTML = $myHTML . $this->template->render('kanboardEmailHistory:notification/footer', array('task' => $data['task']));
                     
                     // Send email
@@ -89,21 +92,23 @@ class EmailTaskHistory extends Base
                     ));
                     
                     $historySent = TRUE;
-                    //an easy way to test code is to use error_log, assuming you know how to check your error logs
-                    error_log("I worked",0);
+
+                    // An easy way to test code is to use error_log
+                    error_log("KanboardEmailHistory > Email Sent",0);
                 } 
             }
+
             if ($send_to == 'creator' || $send_to == 'both') {
                 $user = $this->userModel->getById($data['task']['creator_id']);
     
                 if (! empty($user['email'])) {
                     $myHTML = $this->template->render('kanboardEmailHistory:notification/task_create', array('task' => $data['task']));
                     $myHTML = $myHTML . $this->template->render('kanboardEmailHistory:task_comments/show', array(
-                                            'task' => $data['task'],
-                                            'comments' => $comments,
-                                            'project' => $this->projectModel->getById($data['task']['project_id']),
-                                            'editable' => false,
-                                        ));
+                        'task' => $data['task'],
+                        'comments' => $comments,
+                        'project' => $this->projectModel->getById($data['task']['project_id']),
+                        'editable' => false,
+                    ));
                     $myHTML = $myHTML . $this->template->render('kanboardEmailHistory:notification/footer', array('task' => $data['task']));
 
                     // Send email
@@ -122,13 +127,13 @@ class EmailTaskHistory extends Base
                     ));
 
                     $historySent = TRUE;
-                    error_log("I worked",0);
+
+                    // An easy way to test code is to use error_log
+                    error_log("KanboardEmailHistory > Email Sent",0);
                 } 
             }
         return $historySent;
     }
-
-
    
     public function hasRequiredCondition(array $data)
     {
