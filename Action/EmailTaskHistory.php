@@ -27,7 +27,15 @@ class EmailTaskHistory extends Base
     {
         return array(
 	        'subject' => t('Email subject'),
-	        'send_to' => array('assignee' => t('Send to Assignee'), 'creator' => t('Send to Creator'), 'both' => t('Send to Both')),
+	        'send_to' => array(
+                'assignee' => t('Send to Assignee'),
+                'creator' => t('Send to Creator'),
+                'both' => t('Assignee & Creator'),
+                'project_email' => t('Project Email'),
+                'assignee_project_email' => t('Assignee & Project Email'),
+                'creator_project_email' => t('Creator & Project Email'),
+                'all' => t('Assignee, Creator & Project Email')
+            ),
 	        'check_box_include_title' => t('Include the Task Title and ID in the subject line?'),
             'check_box_include_project' => t('Include the Project Name in the subject line?'),
             'check_box_include_project_identifier' => t('Include the Project Identifier in the subject line?'),
@@ -93,15 +101,15 @@ class EmailTaskHistory extends Base
             $subject = $this->getParam('subject');
         }
         
-        // CONSTRUCT EMAIL - SEND TO SELECTED OR BOTH
+        // CONSTRUCT EMAIL - SEND TO SELECTED OR ALL
         if ($this->getParam('send_to') !== null) {
             $send_to = $this->getParam('send_to');
         } else {
-            $send_to = 'both';
+            $send_to = 'all';
         }
         
-            // CONSTRUCT EMAIL - SEND TO 'ASSIGNEE' OR BOTH
-            if ($send_to == 'assignee' || $send_to == 'both') {
+            // CONSTRUCT EMAIL - SEND TO 'ASSIGNEE' OR 'BOTH' OR 'ALL'
+            if ($send_to == 'assignee' || $send_to == 'both' || $send_to == 'all') {
                 $user = $this->userModel->getById($data['task']['owner_id']);
     
                 if (! empty($user['email'])) {
@@ -136,8 +144,8 @@ class EmailTaskHistory extends Base
                 } 
             }
 
-            // CONSTRUCT EMAIL - SEND TO 'CREATOR' OR BOTH
-            if ($send_to == 'creator' || $send_to == 'both') {
+            // CONSTRUCT EMAIL - SEND TO 'CREATOR' OR 'BOTH' OR 'ALL'
+            if ($send_to == 'creator' || $send_to == 'both' || $send_to == 'all') {
                 $user = $this->userModel->getById($data['task']['creator_id']);
     
                 if (! empty($user['email'])) {
@@ -171,6 +179,44 @@ class EmailTaskHistory extends Base
                     error_log("KanboardEmailHistory > Email Sent",0);
                 } 
             }
+
+            // CONSTRUCT EMAIL - SEND TO 'PROJECT_EMAIL' OR 'ALL'
+            if ($send_to == 'project_email' || $send_to == 'all') {
+                $user = $this->userModel->getById($data['task']['creator_id']);
+                $project = $this->projectModel->getById($project_id);
+
+                if (! empty($project['email'])) {
+                    $myHTML = $this->template->render('kanboardEmailHistory:notification/task_create', array('task' => $data['task']));
+                    $myHTML = $myHTML . $this->template->render('kanboardEmailHistory:task_comments/show', array(
+                        'task' => $data['task'],
+                        'comments' => $comments,
+                        'project' => $this->projectModel->getById($data['task']['project_id']),
+                        'editable' => false,
+                    ));
+                    $myHTML = $myHTML . $this->template->render('kanboardEmailHistory:notification/footer', array('task' => $data['task']));
+
+                    // Send email
+                    $this->emailClient->send(
+                        $project['email'],
+                        $user['name'] ?: $user['username'],
+                        $subject,
+                        $myHTML
+                    );
+
+                    // Add comment to task to show an email has been fired
+                    $this->commentModel->create( array(
+                        'comment' => t('Task history emailed to the task creator @'.$user['username'].' with subject "'. $subject).'".',
+                        'user_id' => $user['id'],
+                        'task_id' => $data['task']['id'],
+                    ));
+
+                    $historySent = TRUE;
+
+                    // An easy way to test code is to use error_log
+                    error_log("KanboardEmailHistory > Email Sent",0);
+                }
+            }
+
         return $historySent;
     }
    
