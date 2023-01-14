@@ -93,6 +93,7 @@ Translations
 
 - English (UK), French, German
 - _Contributors welcome_
+- _Starter template available_
 
 
 Authors & Contributors
