@@ -49,7 +49,7 @@
             <?= $this->form->select('params['.$param_name.']', $param_desc, $values) ?>
         <?php else: ?>
             <?= $this->form->label($param_desc, $param_name) ?>
-            <?= $this->form->text('params['.$param_name.']', $values, array(), array('placeholder="'. t('Task Activity Report') .'"'), array(), 'subject-input') ?>
+            <?= $this->form->text('params['.$param_name.']', $values, $errors, array('placeholder="'. t('Task Activity Report') .'"'), 'subject-input') ?>
         <?php endif ?>
     <?php endforeach ?>
 

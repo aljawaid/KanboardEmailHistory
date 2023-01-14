@@ -224,4 +224,5 @@ class EmailTaskHistory extends Base
     {
         return true;
     }
+
 }
