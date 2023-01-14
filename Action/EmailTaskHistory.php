@@ -181,7 +181,7 @@ class EmailTaskHistory extends Base
             }
 
             // CONSTRUCT EMAIL - SEND TO 'PROJECT_EMAIL' OR 'ALL'
-            if ($send_to == 'project_email' || $send_to == 'all') {
+            if ($send_to == 'project_email' || $send_to == 'assignee_project_email' || $send_to == 'creator_project_email' || $send_to == 'all') {
 
                 $user = $this->userModel->getById($data['task']['creator_id']);
                 $project = $this->projectModel->getById($data['task']['project_id']);
