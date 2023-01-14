@@ -2,7 +2,7 @@
 
 #### _Automatic Action plugin for [Kanboard](https://github.com/fguillot/kanboard "Kanboard - Kanban Project Management Software")_
 
-This action plugin adds a new action to the Kanboard user workflow process. Upon closing tasks, automatically email the task description and full history of comments to selected recipients.
+This plugin adds a new Automatic Action to provide the user with a final email report. Upon closing tasks, automatic emails can be sent of each task description with full comment history to selected recipients or the assigned project email address.
 
 
 Features
