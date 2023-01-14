@@ -108,8 +108,8 @@ class EmailTaskHistory extends Base
             $send_to = 'all';
         }
         
-            // CONSTRUCT EMAIL - SEND TO 'ASSIGNEE' OR 'BOTH' OR 'ALL'
-            if ($send_to == 'assignee' || $send_to == 'both' || $send_to == 'all') {
+            // CONSTRUCT EMAIL - SEND TO 'ASSIGNEE' 'ASSIGNEE & PROJECT EMAIL' OR 'BOTH' OR 'ALL'
+            if ($send_to == 'assignee'|| $send_to == 'assignee_project_email' || $send_to == 'both' || $send_to == 'all') {
                 $user = $this->userModel->getById($data['task']['owner_id']);
     
                 if (! empty($user['email'])) {
@@ -144,8 +144,8 @@ class EmailTaskHistory extends Base
                 } 
             }
 
-            // CONSTRUCT EMAIL - SEND TO 'CREATOR' OR 'BOTH' OR 'ALL'
-            if ($send_to == 'creator' || $send_to == 'both' || $send_to == 'all') {
+            // CONSTRUCT EMAIL - SEND TO 'CREATOR' 'CREATOR & PROJECT EMAIL' OR 'BOTH' OR 'ALL'
+            if ($send_to == 'creator' || $send_to == 'creator_project_email' || $send_to == 'both' || $send_to == 'all') {
                 $user = $this->userModel->getById($data['task']['creator_id']);
     
                 if (! empty($user['email'])) {
@@ -205,7 +205,7 @@ class EmailTaskHistory extends Base
 
                     // Add comment to task to show an email has been fired
                     $this->commentModel->create( array(
-                        'comment' => t('Task history emailed to the task creator @'.$user['username'].' with subject "'. $subject).'".',
+                        'comment' => t('Task history emailed to the project email address with subject "'. $subject).'".',
                         'user_id' => $user['id'],
                         'task_id' => $data['task']['id'],
                     ));
