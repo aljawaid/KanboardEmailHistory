@@ -54,7 +54,7 @@ class Plugin extends Base
 
 	public function getPluginDescription() 
 	{ 
-		return t('This action plugin adds a new action to the Kanboard user workflow process. Upon closing tasks, automatically email the task description and full history of comments to selected recipients.');
+		return t('This plugin adds a new Automatic Action to provide the user with a final email report. Upon closing tasks, automatic emails can be sent of each task description with full comment history to selected recipients or the assigned project email address.');
 	}
 
 	public function getPluginHomepage() 
