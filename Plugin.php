@@ -16,8 +16,9 @@ class Plugin extends Base
 		
 		if (!file_exists('plugins/AutoSubtasks')) {
 		    $this->template->setTemplateOverride('action_creation/params', 'kanboardEmailHistory:action_creation/params');
-		}
-    		
+		} else {
+			$this->template->setTemplateOverride('autoSubtasks:action_creation/params', 'kanboardEmailHistory:action_creation/params');
+    	}
 	}
 	
 	public function onStartup()
