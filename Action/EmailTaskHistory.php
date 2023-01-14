@@ -31,9 +31,9 @@ class EmailTaskHistory extends Base
                 'assignee' => t('Send to Assignee'),
                 'creator' => t('Send to Creator'),
                 'both' => t('Assignee & Creator'),
-                'project_email' => t('Project Email'),
                 'assignee_project_email' => t('Assignee & Project Email'),
                 'creator_project_email' => t('Creator & Project Email'),
+                'project_email' => t('Project Email'),
                 'all' => t('Assignee, Creator & Project Email')
             ),
 	        'check_box_include_title' => t('Include the Task Title and ID in the subject line?'),
