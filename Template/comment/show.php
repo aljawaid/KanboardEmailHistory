@@ -6,10 +6,10 @@
         <?php endif ?>
 
         <small class="comment-date"><?= t('Created at:') ?>&nbsp;
-            <kbd class="comment-created"><?= $this->dt->datetime($comment['date_creation']) ?><abbr title="Local Time">LT</abbr></kbd>
+            <kbd class="comment-created"><?= $this->dt->datetime($comment['date_creation']) ?><abbr title="<?= t('Local Time') ?>"><?= t('LT') ?></abbr></kbd>
         </small>
         <small class="comment-date updated-comment"><?= t('Updated at:') ?>&nbsp;
-            <kbd class="comment-updated"><?= $this->dt->datetime($comment['date_modification']) ?><abbr title="Local Time">LT</abbr></kbd>
+            <kbd class="comment-updated"><?= $this->dt->datetime($comment['date_modification']) ?><abbr title="<?= t('Local Time') ?>"><?= t('LT') ?></abbr></kbd>
         </small>
         <small class="comment-date comment-id"><i class="fa fa-comment-o fa-fw"></i> <?= t('ID: ') ?> <kbd class="comment-created"><?= $this->text->e($comment['id']) ?></kbd></small>
     </div>

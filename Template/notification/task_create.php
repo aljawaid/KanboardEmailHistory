@@ -5,14 +5,14 @@
 <h3><?= t('Summary') ?></h3>
 <ul class="">
     <li class="">
-        Task Status: <?php if ($task['is_active'] == 1): ?>
+        <?= t('Task Status:') ?> <?php if ($task['is_active'] == 1): ?>
             <strong style="text-transform: uppercase; color: green;"><?= t('open') ?></strong>
         <?php else: ?>
             <strong style="text-transform: uppercase; color: red;"><?= t('closed') ?></strong>
         <?php endif ?>
     </li>
     <li class="">
-        Task N°: <strong>#<?= $this->text->e($task['id']) ?></strong>
+        <?= t('Task N°:') ?> <strong>#<?= $this->text->e($task['id']) ?></strong>
     </li>
     <li class="">
         <?= t('Project:') ?> <strong><?= $this->text->e($task['project_name']) ?></strong>
@@ -47,7 +47,7 @@
     </li>
     <?php if ($task['date_due']): ?>
         <li class="">
-            <strong><?= t('Due date:').' '.$this->dt->datetime($task['date_due']) ?></strong>
+            <strong><?= t('Due Date:').' '.$this->dt->datetime($task['date_due']) ?></strong>
         </li>
     <?php endif ?>
     <?php if ($task['date_completed']): ?>
@@ -66,13 +66,13 @@
             <?php if (! empty($task['assignee_username'])): ?>
                 <?= t('Assigned to %s', $task['assignee_name'] ?: $task['assignee_username']) ?>
             <?php else: ?>
-                <?= t('There is nobody assigned') ?>
+                <?= t('Nobody was assigned to this task') ?>
             <?php endif ?>
         </strong>
     </li>
     <li class="">
         <hr style="list-style-type: none;">
-        <?= t('Column on the board:') ?> <strong><?= $this->text->e($task['column_title']) ?></strong>
+        <?= t('Board Column:') ?> <strong><?= $this->text->e($task['column_title']) ?></strong>
     </li>
     <?php if (! empty($task['swimlane_name'])): ?>
         <li class="">
@@ -85,7 +85,7 @@
         </li>
     <?php endif ?>
     <li class="">
-        <?= t('Task position:').' '.$this->text->e($task['position']) ?>
+        <?= t('Task Position:').' '.$this->text->e($task['position']) ?>
     </li>
     <?php if ($task['recurrence_status'] == \Kanboard\Model\TaskModel::RECURRING_STATUS_PENDING): ?>
         <li class="">
@@ -101,7 +101,7 @@
         <?php if ($task['recurrence_parent'] || $task['recurrence_child']): ?>
             <?php if ($task['recurrence_parent']): ?>
                 <li>
-                    <?= t('This task has been created by: ') ?>
+                    <?= t('This task was created by: ') ?>
                     <?= $this->url->link('#'.$task['recurrence_parent'], 'TaskViewController', 'show', array('task_id' => $task['recurrence_parent'], 'project_id' => $task['project_id'])) ?>
                 </li>
             <?php endif ?>
