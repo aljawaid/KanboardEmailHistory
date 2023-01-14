@@ -140,7 +140,7 @@ class EmailTaskHistory extends Base
                     $historySent = TRUE;
 
                     // An easy way to test code is to use error_log
-                    error_log("KanboardEmailHistory > Email Sent",0);
+                    error_log("KanboardEmailHistory > Email Sent to Task Assignee",0);
                 } 
             }
 
@@ -176,7 +176,7 @@ class EmailTaskHistory extends Base
                     $historySent = TRUE;
 
                     // An easy way to test code is to use error_log
-                    error_log("KanboardEmailHistory > Email Sent",0);
+                    error_log("KanboardEmailHistory > Email Sent to Task Creator",0);
                 } 
             }
 
@@ -213,7 +213,7 @@ class EmailTaskHistory extends Base
                     $historySent = TRUE;
 
                     // An easy way to test code is to use error_log
-                    error_log("KanboardEmailHistory > Email Sent",0);
+                    error_log("KanboardEmailHistory > Email Sent to Project Email Address",0);
                 }
             }
 
