@@ -168,7 +168,7 @@ class EmailTaskHistory extends Base
 
                     // Add comment to task to show an email has been fired
                     $this->commentModel->create( array(
-                    	'comment' => t('Task history emailed to the task creator @'.$user['username'].' with subject "'. $subject).'".',
+                    	'comment' => t('A copy of the task history has been emailed to @'.$user['username'].' (Task Creator) [Subject: '. $subject .']'),
                     	'user_id' => $user['id'],
                     	'task_id' => $data['task']['id'],
                     ));
