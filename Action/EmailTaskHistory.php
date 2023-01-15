@@ -36,8 +36,8 @@ class EmailTaskHistory extends Base
                 'project_email' => t('Project Email'),
                 'all' => t('Assignee, Creator & Project Email')
             ),
-	        'check_box_include_title' => t('Include the Task Title and ID in the subject line?'),
-            'check_box_include_project' => t('Include the Project Name in the subject line?'),
+	        'check_box_include_task_title' => t('Include the Task Title and ID in the subject line?'),
+            'check_box_include_project_name' => t('Include the Project Name in the subject line?'),
             'check_box_include_project_identifier' => t('Include the Project Identifier in the subject line?'),
         );
     }
