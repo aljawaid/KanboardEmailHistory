@@ -21,7 +21,7 @@ return array(
   'Include the Project Identifier in the subject line?' => 'Include the Project Identifier in the subject line?',
   'Task history emailed to the task assignee @"%s" with subject "%s".' => 'Task history has been emailed to @"%s" (Task Assignee) with the subject "%s".',
   'Task history emailed to the task creator @"%s" with subject "%s".' => 'Task history has been emailed to @"%s" (Task Creator) with the subject "%s".',
-  'Task history emailed to the project email address with subject "%s".' => 'Task history has been emailed to the project email address with the subject "%s".',
+  'A copy of the task history has been emailed to the project email address [Subject: %s]' => 'A copy of the task history has been emailed to the project email address [Subject: %s]',
   //
   // action_creation/params.php
   //

@@ -21,7 +21,7 @@ return array(
   'Include the Project Identifier in the subject line?' => 'Die Projektkennung in die Betreffzeile aufnehmen?',
   'Task history emailed to the task assignee @"%s" with subject "%s".' => 'Der Aufgabenverlauf wurde per E-Mail an den Aufgabenverantwortlichen @"%s" mit dem Betreff "%s" gesendet.',
   'Task history emailed to the task creator @"%s" with subject "%s".' => 'Der Aufgabenverlauf wurde per E-Mail an den Ersteller der Aufgabe @"%s" mit dem Betreff "%s" gesendet.',
-  'Task history emailed to the project email address with subject "%s".' => 'Der Aufgabenverlauf wurde per E-Mail an die E-Mail-Adresse des Projekts mit dem Betreff "%s" gesendet.',
+  'A copy of the task history has been emailed to the project email address [Subject: %s]' => 'Eine Kopie des Aufgabenverlaufs wurde per E-Mail an die E-Mail-Adresse des Projekts [Gegenstand: %s] gesendet',
   //
   // action_creation/params.php
   //
