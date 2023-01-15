@@ -3,7 +3,7 @@
 </div>
 
 <?php if (file_exists('plugins/KanboardEmailHistory')): ?>
-    <form method="post" action="<?= $this->url->href('ActionCreationController', 'params', array('project_id' => $project['id'])) ?>">
+    <form method="post" action="<?= $this->url->href('EmailHistoryController', 'parameters', array('project_id' => $project['id'], 'plugin' => 'KanboardEmailHistory')) ?>">
         <?= $this->form->csrf() ?>
 
         <?= $this->form->hidden('action_name', $values) ?>
