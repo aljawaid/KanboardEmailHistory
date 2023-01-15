@@ -13,6 +13,10 @@ class Plugin extends Base
     public function initialize()
 	{
 		$this->actionManager->register(new EmailTaskHistory($this->container));
+
+		// Template Override
+        //  - Override name should be camelCase e.g. pluginNameExampleCamelCase
+		$this->template->setTemplateOverride('action_creation/event', 'kanboardEmailHistory:action_creation/event');
 	}
 	
 	public function onStartup()
