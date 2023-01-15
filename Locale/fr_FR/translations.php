@@ -19,7 +19,7 @@ return array(
   'Include the Task Title and ID in subject line?' => 'Inclure le titre et l\'ID de la tâche dans la ligne d\'objet?',
   'Include the Project Name in the subject line?' => 'Inclure le nom du projet dans la ligne d\'objet?',
   'Include the Project Identifier in the subject line?' => 'Inclure l\'identifiant du projet dans la ligne d\'objet?',
-  'Task history emailed to the task assignee @"%s" with subject "%s".' => 'Historique des tâches envoyé par e-mail au destinataire de la tâche @"%s" avec le sujet "%s".',
+  'A copy of the task history has been emailed to @%s (Task Assignee) [Subject: %s]' => 'Une copie de l\'historique de la tâche a été envoyée par e-mail à @%s (chargé de la tâche) [Sujet: %s]',
   'A copy of the task history has been emailed to @%s (Task Creator) [Subject: %s]' => 'Une copie de l\'historique des tâches a été envoyée par e-mail à @%s (Créateur de tâches) [Sujet: %s]',
   'A copy of the task history has been emailed to the project email address [Subject: %s]' => 'Une copie de l\'historique des tâches a été envoyée par e-mail à l\'adresse e-mail du projet [Sujet: %s]',
   //

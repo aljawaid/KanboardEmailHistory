@@ -19,7 +19,7 @@ return array(
   'Include the Task Title and ID in subject line?' => 'Include the Task Title and ID in the subject line?',
   'Include the Project Name in the subject line?' => 'Include the Project Name in the subject line?',
   'Include the Project Identifier in the subject line?' => 'Include the Project Identifier in the subject line?',
-  'Task history emailed to the task assignee @"%s" with subject "%s".' => 'Task history has been emailed to @"%s" (Task Assignee) with the subject "%s".',
+  'A copy of the task history has been emailed to @%s (Task Assignee) [Subject: %s]' => 'A copy of the task history has been emailed to @%s (Task Assignee) [Subject: %s]',
   'A copy of the task history has been emailed to @%s (Task Creator) [Subject: %s]' => 'A copy of the task history has been emailed to @%s (Task Creator) [Subject: %s]',
   'A copy of the task history has been emailed to the project email address [Subject: %s]' => 'A copy of the task history has been emailed to the project email address [Subject: %s]',
   //
