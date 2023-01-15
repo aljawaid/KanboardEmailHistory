@@ -66,7 +66,7 @@
             <?php if (! empty($task['assignee_username'])): ?>
                 <?= t('Assigned to %s', $task['assignee_name'] ?: $task['assignee_username']) ?>
             <?php else: ?>
-                <?= t('Nobody was assigned to this task') ?>
+                <i><?= t('Nobody was assigned to this task') ?></i>
             <?php endif ?>
         </strong>
     </li>
