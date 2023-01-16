@@ -2,7 +2,7 @@
     <h2><?= t('Define action parameters') ?></h2>
 </div>
 
-<form method="post" action="<?= $this->url->href('ActionCreationController', 'save', array('project_id' => $project['id'])) ?>" autocomplete="off">
+<form method="post" action="<?= $this->url->href('ActionCreationController', 'save', array('project_id' => $project['id'])) ?>" autocomplete="on">
     <?= $this->form->csrf() ?>
 
     <?= $this->form->hidden('event_name', $values) ?>
@@ -51,7 +51,7 @@
                 <?= $this->form->select('params['.$param_name.']', $param_desc, $values) ?>
             <?php else: ?>
                 <?= $this->form->label($param_desc, $param_name) ?>
-                <?= $this->form->text('params['.$param_name.']', $values, array(), array('placeholder="'. t('Task Activity Report') .'"', 'autocomplete="on"'), 'subject-input') ?>
+                <?= $this->form->text('params['.$param_name.']', $values, array(), array('placeholder="'. t('Task Activity Report') .'"'), 'subject-input') ?>
             <?php endif ?>
         <?php endforeach ?>
 
