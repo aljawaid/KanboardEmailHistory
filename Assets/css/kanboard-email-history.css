@@ -46,3 +46,8 @@
 .text-center { text-align: center; }
 
 .relative { position: relative; }
+
+.param-options {
+    border-radius: var(--border-radius-kbemailhistory);
+    border: 1px solid var(--blue-border-gradient-match);
+}
