@@ -49,7 +49,7 @@
                 <?= $this->form->label(t('Send to'), $param_name) ?>
             <?php else: ?>
                 <?= $this->form->label(ucfirst($param_name), $param_name) ?>
-        <?= php endif ?>
+        <?php endif ?>
             <?= $this->form->select('params['.$param_name.']', $param_desc, $values) ?>
         <?php else: ?>
             <?= $this->form->label($param_desc, $param_name) ?>
