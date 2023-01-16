@@ -17,6 +17,10 @@ class Plugin extends Base
 		// Template Override
         //  - Override name should be camelCase e.g. pluginNameExampleCamelCase
 		$this->template->setTemplateOverride('action_creation/event', 'kanboardEmailHistory:action_creation/event');
+
+		// CSS - Asset Hook
+        //  - Keep filename lowercase
+        $this->hook->on('template:layout:css', array('template' => 'plugins/KanboardEmailHistory/Assets/css/kanboard-email-history.css'));
 	}
 	
 	public function onStartup()
