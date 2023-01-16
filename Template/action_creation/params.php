@@ -36,7 +36,7 @@
                 <?= $this->form->select('params['.$param_name.']', $links_list, $values) ?>
             <?php elseif ($this->text->contains($param_name, 'check_box')): ?>
                 <?= $this->form->label(t('Options'), $param_name) ?>
-                <?= $this->form->checkbox('params['.$param_name.']', $param_desc, 1) ?>
+                <?= $this->form->checkbox('params['.$param_name.']', $param_desc, 1, false, 'params-'.$param_name.'') ?>
             <?php elseif ($param_name === 'priority'): ?>
                 <?= $this->form->label($param_desc, $param_name) ?>
                 <?= $this->form->select('params['.$param_name.']', $priorities_list, $values) ?>
@@ -77,7 +77,7 @@
                 <?= $this->form->select('params['.$param_name.']', $links_list, $values) ?>
             <?php elseif ($this->text->contains($param_name, 'check_box')): ?>
                 <?= $this->form->label(t('Options'), $param_name) ?>
-                <?= $this->form->checkbox('params['.$param_name.']', $param_desc, 1) ?>
+                <?= $this->form->checkbox('params['.$param_name.']', $param_desc, 1, false, 'params-'.$param_name.'') ?>
             <?php elseif ($param_name === 'priority'): ?>
                 <?= $this->form->label($param_desc, $param_name) ?>
                 <?= $this->form->select('params['.$param_name.']', $priorities_list, $values) ?>
