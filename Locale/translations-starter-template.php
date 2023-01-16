@@ -39,6 +39,7 @@ return array(
   'Event' => '',
   'Options' => '',
   'Task Activity Report' => '',
+  'Email Recipient(s)' => '',
   //
   // comment/show.php
   //

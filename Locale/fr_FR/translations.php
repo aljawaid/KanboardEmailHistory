@@ -30,6 +30,7 @@ return array(
   'Event' => 'Événement',
   'Options' => 'Choix',
   'Task Activity Report' => 'Rapport d\'activité de tâche',
+  'Email Recipient(s)' => 'Destinataire(s) de l\'e-mail',
   //
   // comment/show.php
   //

@@ -30,6 +30,7 @@ return array(
   'Event' => 'Fall',
   'Options' => 'Optionen',
   'Task Activity Report' => 'Aufgabenaktivitätsbericht',
+  'Email Recipient(s)' => 'E-mail Empfänger',
   //
   // comment/show.php
   //
