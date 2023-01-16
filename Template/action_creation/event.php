@@ -2,7 +2,7 @@
     <h2><?= t('Choose an event') ?></h2>
 </div>
 
-<?php if (file_exists('plugins/KanboardEmailHistory')): ?>
+<?php if ($values['action_name'] == '\Kanboard\Plugin\KanboardEmailHistory\Action\EmailTaskHistory'): ?>
     <form method="post" action="<?= $this->url->href('EmailHistoryController', 'parameters', array('project_id' => $project['id'], 'plugin' => 'KanboardEmailHistory')) ?>">
         <?= $this->form->csrf() ?>
 

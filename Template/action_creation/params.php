@@ -14,7 +14,7 @@
     <?= $this->form->label(t('Event'), 'event_name') ?>
     <?= $this->form->select('event_name', $events, $values, array(), array('disabled')) ?>
 
-    <?php if (file_exists('plugins/KanboardEmailHistory')): ?>
+    <?php if ($values['action_name'] == '\Kanboard\Plugin\KanboardEmailHistory\Action\EmailTaskHistory'): ?>
 
         <?php foreach ($action_params as $param_name => $param_desc): ?>
             <?php if ($this->text->contains($param_name, 'column_id')): ?>
