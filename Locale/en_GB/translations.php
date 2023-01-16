@@ -29,6 +29,7 @@ return array(
   'Action' => 'Action',
   'Event' => 'Event',
   'Options' => 'Options',
+  'Task Activity Report' => 'Task Activity Report',
   //
   // comment/show.php
   //

@@ -38,6 +38,7 @@ return array(
   'Action' => '',
   'Event' => '',
   'Options' => '',
+  'Task Activity Report' => '',
   //
   // comment/show.php
   //

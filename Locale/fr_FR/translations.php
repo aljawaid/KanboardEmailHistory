@@ -29,6 +29,7 @@ return array(
   'Action' => 'Action',
   'Event' => 'Événement',
   'Options' => 'Choix',
+  'Task Activity Report' => 'Rapport d\'activité de tâche',
   //
   // comment/show.php
   //
