@@ -32,6 +32,7 @@ return array(
   'Options' => 'Optionen',
   'Task Activity Report' => 'Aufgabenaktivitätsbericht',
   'Email Recipient(s)' => 'E-mail Empfänger',
+  'If left blank then "Task Activity Report" is used as the subject' => 'Wenn das Feld leer gelassen wird, wird "Aufgabenaktivitätsbericht" als Betreff verwendet',
   //
   // comment/show.php
   //

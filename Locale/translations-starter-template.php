@@ -41,6 +41,7 @@ return array(
   'Options' => '',
   'Task Activity Report' => '',
   'Email Recipient(s)' => '',
+  'If left blank then "Task Activity Report" is used as the subject' => '',
   //
   // comment/show.php
   //

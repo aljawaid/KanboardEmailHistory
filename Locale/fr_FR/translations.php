@@ -32,6 +32,7 @@ return array(
   'Options' => 'Choix',
   'Task Activity Report' => 'Rapport d\'activité de tâche',
   'Email Recipient(s)' => 'Destinataire(s) de l\'e-mail',
+  'If left blank then "Task Activity Report" is used as the subject' => 'Si laissé vide, "Rapport d\'activité de tâche" est utilisé comme sujet',
   //
   // comment/show.php
   //

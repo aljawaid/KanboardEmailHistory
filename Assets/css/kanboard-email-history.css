@@ -51,3 +51,8 @@
     border-radius: var(--border-radius-kbemailhistory);
     border: 1px solid var(--blue-border-gradient-match);
 }
+
+.form-help-subject {
+    display: inline-block;
+    margin: auto 10px;
+}
