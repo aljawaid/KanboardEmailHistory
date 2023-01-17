@@ -1,5 +1,5 @@
 <div class="page-header">
-    <h2><?= t('Define action parameters') ?></h2>
+    <h2><?= t('Define Automatic Action Parameters') ?></h2>
 </div>
 
 <form method="post" action="<?= $this->url->href('ActionCreationController', 'save', array('project_id' => $project['id'])) ?>" autocomplete="on">

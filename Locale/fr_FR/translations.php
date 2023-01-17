@@ -25,7 +25,7 @@ return array(
   //
   // action_creation/params.php
   //
-  'Define action parameters' => 'Définir les paramètres d\'action',
+  'Define Automatic Action Parameters' => 'Définir les paramètres d\'action automatique',
   'Action' => 'Action',
   'Event' => 'Événement',
   'Options' => 'Choix',

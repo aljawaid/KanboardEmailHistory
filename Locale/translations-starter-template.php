@@ -34,7 +34,7 @@ return array(
   //
   // action_creation/params.php
   //
-  'Define action parameters' => '',
+  'Define Automatic Action Parameters' => '',
   'Action' => '',
   'Event' => '',
   'Options' => '',
