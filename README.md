@@ -47,7 +47,7 @@ Compatibility
 - Requires [Kanboard](https://github.com/fguillot/kanboard "Kanboard - Kanban Project Management Software") ≥`1.2.20`
 
 #### Other Plugins & Action Plugins
-- Compatible with [AutoSubtasks](https://github.com/creecros/AutoSubtasks)
+- Compatible with [AutomaticActionUX](https://github.com/aljawaid/AutomaticActionUX), [AutoSubtasks](https://github.com/creecros/AutoSubtasks)
 #### Core Files & Templates
 - `01` Template override
 - _No database changes_
