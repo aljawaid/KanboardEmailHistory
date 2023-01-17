@@ -8,10 +8,10 @@
     <?= $this->form->hidden('event_name', $values) ?>
     <?= $this->form->hidden('action_name', $values) ?>
 
-    <?= $this->form->label(t('Action'), 'action_name') ?>
+    <?= $this->form->label(t('Selected Action'), 'action_name') ?>
     <?= $this->form->select('action_name', $available_actions, $values, array(), array('disabled')) ?>
 
-    <?= $this->form->label(t('Event'), 'event_name') ?>
+    <?= $this->form->label(t('Selected Event'), 'event_name') ?>
     <?= $this->form->select('event_name', $events, $values, array(), array('disabled')) ?>
 
     <?php if ($values['action_name'] == '\Kanboard\Plugin\KanboardEmailHistory\Action\EmailTaskHistory'): ?>

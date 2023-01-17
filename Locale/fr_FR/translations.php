@@ -26,8 +26,9 @@ return array(
   // action_creation/params.php
   //
   'Define Automatic Action Parameters' => 'Définir les paramètres d\'action automatique',
-  'Action' => 'Action',
+  'Selected Action' => 'Action sélectionnée',
   'Event' => 'Événement',
+  'Selected Event' => 'Événement Sélectionné',
   'Options' => 'Choix',
   'Task Activity Report' => 'Rapport d\'activité de tâche',
   'Email Recipient(s)' => 'Destinataire(s) de l\'e-mail',

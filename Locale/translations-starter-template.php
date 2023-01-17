@@ -35,8 +35,9 @@ return array(
   // action_creation/params.php
   //
   'Define Automatic Action Parameters' => '',
-  'Action' => '',
+  'Selected Action' => '',
   'Event' => '',
+  'Selected Event' => '',
   'Options' => '',
   'Task Activity Report' => '',
   'Email Recipient(s)' => '',
