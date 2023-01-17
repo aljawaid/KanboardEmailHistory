@@ -47,16 +47,16 @@
                 <?php elseif ($this->text->contains($param_name, 'swimlane_id')): ?>
                     <?= $this->form->label($param_desc, $param_name) ?>
                     <?= $this->form->select('params['.$param_name.']', $swimlane_list, $values) ?>
-                <?php elseif (is_array($param_desc) && ($param_name = 'send_to')): ?>
-                    <?= $this->form->label(t('Email Recipient(s)'), $param_name) ?>
+                <?php elseif (is_array($param_desc) && ($param_name == 'send_to')): ?>
+                    <?= $this->form->label(t('Email Recipient(s)'), 'params['. $param_name .']') ?>
                     <?= $this->form->select('params['.$param_name.']', $param_desc, $values) ?>
-                <?php elseif (is_array($param_desc) && (!$param_name = 'send_to')): ?>
+                <?php elseif (is_array($param_desc) && (!$param_name == 'send_to')): ?>
                     <?= $this->form->label(ucfirst($param_name), $param_name) ?>
                     <?= $this->form->select('params['.$param_name.']', $param_desc, $values) ?>
                 <?php else: ?>
-                    <?= $this->form->label($param_desc, $param_name) ?>
+                    <?= $this->form->label($param_desc, 'params['. $param_name .']') ?>
                     <?= $this->form->text('params['.$param_name.']', $values, array(), array('placeholder="'. t('Activity Report') .'"'), 'subject-input') ?>
-                    <?php if ($param_name = 'subject'): ?>
+                    <?php if ($param_name == 'subject'): ?>
                         <div class="form-help form-help-subject">
                             <?= t('If left blank then "Activity Report" is used as the subject') ?>
                         </div>
