@@ -8,7 +8,7 @@
 
         <?= $this->form->hidden('action_name', $values) ?>
 
-        <?= $this->form->label(t('Selected Action'), 'action_name') ?>
+        <i><?= $this->form->label(t('Selected Action'), 'action_name') ?></i>
         <?= $this->form->select('action_name', $available_actions, $values, array(), array('disabled')) ?>
 
         <?= $this->form->label(t('Event'), 'event_name') ?>
