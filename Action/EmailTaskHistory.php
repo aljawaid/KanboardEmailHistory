@@ -106,7 +106,7 @@ class EmailTaskHistory extends Base
         } else {
             ///////     NO SELECTION
             // Subject becomes: `subject`
-            $subject = $this->getParam('subject');
+            $subject = t('Activity Report');
         }
         
         // CONSTRUCT EMAIL - SEND TO SELECTED OR ALL
