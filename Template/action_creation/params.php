@@ -58,7 +58,7 @@
                     <?= $this->form->text($param_name, $values, array(), array('placeholder="'. t('Task Activity Report') .'"'), 'subject-input') ?>
                     <?php if ($param_name == 'subject'): ?>
                         <div class="form-help form-help-subject">
-                            <?= t('If left blank then "Task Activity Report" is used as the subject') ?>
+                            <?= t('If left blank then "Activity Report" is used as the subject') ?>
                         </div>
                     <?php endif ?>
                 <?php endif ?>

@@ -39,9 +39,9 @@ return array(
   'Event' => '',
   'Selected Event' => '',
   'Options' => '',
-  'Task Activity Report' => '',
+  'Activity Report' => '',
   'Email Recipient(s)' => '',
-  'If left blank then "Task Activity Report" is used as the subject' => '',
+  'If left blank then "Activity Report" is used as the subject' => '',
   //
   // comment/show.php
   //
