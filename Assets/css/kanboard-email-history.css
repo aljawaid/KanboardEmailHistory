@@ -56,3 +56,46 @@
     display: inline-block;
     margin: auto 10px;
 }
+
+.step-2-form {
+    font-size: initial;
+}
+
+.eth-form {
+    margin: 5px;
+}
+
+.step-2-form h2 {
+    font-size: 1.2em;
+    margin: auto 5px;
+}
+
+.eth-form .selected-labels {
+    font-weight: 600;
+}
+
+.eth-form .form-help {
+    display: inline-block;
+}
+
+.eth-form .help-text p {
+    margin-bottom: 10px;
+}
+
+form.eth-form fieldset.param-options > label:nth-child(10) {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.btn-green-dark {
+    background-color: var(--pp-green-dark);
+    color: var(--pp-white);
+    border-radius: var(--border-radius-kbemailhistory);
+    border: 1px solid var(--pp-green-dark);
+}
+
+.btn-green-dark:hover {
+    color: var(--pp-green-dark);
+    background-color: var(--pp-white);
+    border: 1px solid var(--pp-green-dark);
+}
