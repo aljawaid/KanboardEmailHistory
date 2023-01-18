@@ -140,7 +140,7 @@ class EmailTaskHistory extends Base
 
                     // Add comment to task to show an email has been fired
                     $this->commentModel->create( array(
-                    	'comment' => t('A copy of the task history has been emailed to @'.$user['username'].' (Task Assignee) [Subject: '. $subject .']'),
+                    	'comment' => t('TASK CLOSED: A copy of the task history has been emailed to @'.$user['username'].' (Task Assignee) [Subject: '. $subject .']'),
                     	'user_id' => $user['id'],
                     	'task_id' => $data['task']['id'],
                     ));
@@ -176,7 +176,7 @@ class EmailTaskHistory extends Base
 
                     // Add comment to task to show an email has been fired
                     $this->commentModel->create( array(
-                    	'comment' => t('A copy of the task history has been emailed to @'.$user['username'].' (Task Creator) [Subject: '. $subject .']'),
+                    	'comment' => t('TASK CLOSED: A copy of the task history has been emailed to @'.$user['username'].' (Task Creator) [Subject: '. $subject .']'),
                     	'user_id' => $user['id'],
                     	'task_id' => $data['task']['id'],
                     ));
@@ -214,7 +214,7 @@ class EmailTaskHistory extends Base
 
                     // Add comment to task to show an email has been fired
                     $this->commentModel->create( array(
-                        'comment' => t('A copy of the task history has been emailed to the project email address [Subject: '. $subject .']'),
+                        'comment' => t('TASK CLOSED: A copy of the task history has been emailed to the project email address [Subject: '. $subject .']'),
                         'user_id' => $user['id'],
                         'task_id' => $data['task']['id'],
                     ));

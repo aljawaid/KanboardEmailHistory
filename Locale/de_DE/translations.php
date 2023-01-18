@@ -19,9 +19,9 @@ return array(
   'Include the Task Title and ID in subject line?' => 'Den Aufgabentitel und die ID in die Betreffzeile aufnehmen?',
   'Include the Project Name in the subject line?' => 'Den Projektnamen in die Betreffzeile aufnehmen?',
   'Include the Project Identifier in the subject line?' => 'Die Projektkennung in die Betreffzeile aufnehmen?',
-  'A copy of the task history has been emailed to @%s (Task Assignee) [Subject: %s]' => 'Eine Kopie des Aufgabenverlaufs wurde per E-Mail an @%s (Aufgabenverantwortlicher) [Gegenstand: %s] gesendet.',
-  'A copy of the task history has been emailed to @%s (Task Creator) [Subject: %s]' => 'Eine Kopie des Aufgabenverlaufs wurde per E-Mail an @%s (Aufgabenersteller) [Gegenstand: %s] gesendet.',
-  'A copy of the task history has been emailed to the project email address [Subject: %s]' => 'Eine Kopie des Aufgabenverlaufs wurde per E-Mail an die E-Mail-Adresse des Projekts [Gegenstand: %s] gesendet',
+  'TASK CLOSED: A copy of the task history has been emailed to @%s (Task Assignee) [Subject: %s]' => 'AUFGABE GESCHLOSSEN: Eine Kopie des Aufgabenverlaufs wurde per E-Mail an @%s (Aufgabenverantwortlicher) [Gegenstand: %s] gesendet.',
+  'TASK CLOSED: A copy of the task history has been emailed to @%s (Task Creator) [Subject: %s]' => 'AUFGABE GESCHLOSSEN: Eine Kopie des Aufgabenverlaufs wurde per E-Mail an @%s (Aufgabenersteller) [Gegenstand: %s] gesendet.',
+  'TASK CLOSED: A copy of the task history has been emailed to the project email address [Subject: %s]' => 'AUFGABE GESCHLOSSEN: Eine Kopie des Aufgabenverlaufs wurde per E-Mail an die E-Mail-Adresse des Projekts [Gegenstand: %s] gesendet',
   //
   // action_creation/params.php
   //
