@@ -86,5 +86,5 @@ return array(
   'Event' => 'Event',
   'When the selected event occurs execute the corresponding action' => 'When the selected event occurs execute the corresponding action',
   'This Automatic Action emails a final report once the task is closed. Emails are sent individually detailing the task description and full comment history.' => 'This Automatic Action emails a final report once the task is closed. Emails are sent individually detailing the task description and full comment history.',
-  'An automatic comment is added to the task for each successful email sent.' => 'An automatic comment is added to the task for each successful email sent.',
+  'A comment is automatically added to the task for each successful email sent.' => 'A comment is automatically added to the task for each successful email sent.',
 );

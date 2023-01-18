@@ -20,8 +20,8 @@
 
         <div class="help-text">
             <p class=""><?= t('This Automatic Action emails a final report once the task is closed. Emails are sent individually detailing the task description and full comment history.') ?></p>
-            <p class=""><?= t('An automatic comment is added to the task for each successful email sent.') ?></p>
         </div>
+            <p class=""><?= t('A comment is automatically added to the task for each successful email sent.') ?></p>
 
         <?= $this->modal->submitButtons(array(
             'submitLabel' => t('Next step'),
