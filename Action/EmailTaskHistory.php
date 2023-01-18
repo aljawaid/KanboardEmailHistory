@@ -26,7 +26,7 @@ class EmailTaskHistory extends Base
     public function getActionRequiredParameters()
     {
         return array(
-	        'email_subject' => t('Email subject'),
+	        'email_subject' => t('Email Subject'),
 	        'send_to' => array(
                 'assignee' => t('Send to Assignee'),
                 'creator' => t('Send to Creator'),

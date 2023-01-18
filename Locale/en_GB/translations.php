@@ -4,11 +4,11 @@ return array(
   // GENERAL
   //
   'This plugin adds a new Automatic Action to provide the user with a final email report. Upon closing tasks, automatic emails can be sent of each task description with full comment history to selected recipients or the assigned project email address.' => 'This plugin adds a new Automatic Action to provide the user with a final email report. Upon closing tasks, automatic emails can be sent of each task description with full comment history to selected recipients or the assigned project email address.',
-  'Email subject' => 'Email Subject',
   //
   // Action/EmailTaskHistory.php
   //
   'EmailTaskHistory > Send task description and complete comment history on task closure' => 'EmailTaskHistory > Send task description and complete comment history on task closure',
+  'Email Subject' => 'Email Subject',
   'Send to Assignee' => 'Send to Assignee',
   'Send to Creator' => 'Send to Creator',
   'Assignee & Creator' => 'Assignee & Creator',
