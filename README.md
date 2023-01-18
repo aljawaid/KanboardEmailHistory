@@ -22,23 +22,27 @@ Screenshots
 
 ![Automatic Actions](../master/Screenshots/usage-2.png "Automatic Actions")
 
-**Send full task description and comments by email**
+**EmailTaskHistory > Send task description and complete comment history on task closure**
 
-![Send full task description and comments by email](../master/Screenshots/usage-3.png "Send full task description and comments by email")
+![EmailTaskHistory > Send task description and complete comment history on task closure](../master/Screenshots/usage-3.png "EmailTaskHistory > Send task description and complete comment history on task closure")
 
-**Options are pre-filled**
+**Options are pre-filled in an improved user-friendly form**
 
 ![Options are pre-filled](../master/Screenshots/usage-4.png "Options are pre-filled")
 
-**Define parameter values**
+**Options for this Automatic Action**
 
 ![Define parameter values](../master/Screenshots/usage-5.png "Define parameter values")
+
+**Automatic Action listed in the Project Settings - compatible with [AutomaticActionUX](https://github.com/aljawaid/AutomaticActionUX)**
+
+![Project Settings](../master/Screenshots/usage-6.png "Project Settings")
 
 
 Usage
 -------------
 
-Go to `Project` &#10562; `Automatic Actions` &#10562; `Send full task description and comments by email` &#10562; _Enter parameter values for the action_
+Go to `Project` &#10562; `Automatic Actions` &#10562; `EmailTaskHistory > Send task description and complete comment history on task closure` &#10562; _Enter parameter values for the action_
 
 
 Compatibility
