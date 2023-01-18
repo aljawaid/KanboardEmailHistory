@@ -85,6 +85,7 @@ return array(
   'Select an event for this Automatic Action' => 'Wählen Sie ein Ereignis für diese automatische Aktion aus',
   'Event' => 'Ereignis',
   'When the selected event occurs execute the corresponding action' => 'Wenn das ausgewählte Ereignis eintritt, führen Sie die entsprechende Aktion aus',
+  'Description' => 'Beschreibung',
   'This Automatic Action emails a final report once the task is closed. Emails are sent individually detailing the task description and full comment history.' => 'Diese automatische Aktion sendet einen Abschlussbericht per E-Mail, sobald die Aufgabe abgeschlossen ist. E-Mails werden einzeln gesendet, die die Aufgabenbeschreibung und den vollständigen Kommentarverlauf enthalten.',
   'A comment is automatically added to the task for each successful email sent.' => 'Für jede erfolgreich gesendete E-Mail wird der Aufgabe automatisch ein Kommentar hinzugefügt.',
 );

@@ -94,6 +94,7 @@ return array(
   'Select an event for this Automatic Action' => '',
   'Event' => '',
   'When the selected event occurs execute the corresponding action' => '',
+  'Description' => '',
   'This Automatic Action emails a final report once the task is closed. Emails are sent individually detailing the task description and full comment history.' => '',
   'A comment is automatically added to the task for each successful email sent.' => '',
 );

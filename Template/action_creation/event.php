@@ -19,6 +19,7 @@
         </div>
 
         <div class="help-text">
+            <legend class=""><?= t('Description') ?></legend>
             <p class=""><?= t('This Automatic Action emails a final report once the task is closed. Emails are sent individually detailing the task description and full comment history.') ?></p>
         </div>
             <p class=""><?= t('A comment is automatically added to the task for each successful email sent.') ?></p>
