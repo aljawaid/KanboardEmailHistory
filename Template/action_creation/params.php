@@ -56,7 +56,7 @@
                 <?php else: ?>
                     <?= $this->form->label($param_desc, 'params['. $param_name .']') ?>
                     <?= $this->form->text('params['.$param_name.']', $values, array(), array('placeholder="'. t('Activity Report') .'"'), 'subject-input') ?>
-                    <?php if ($param_name == 'subject'): ?>
+                    <?php if ($param_name == 'email_subject'): ?>
                         <div class="form-help form-help-subject">
                             <?= t('If left blank then "Activity Report" is used as the subject') ?>
                         </div>
