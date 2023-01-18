@@ -3,7 +3,7 @@ return array(
   //
   // GENERAL
   //
-  'This plugin adds a new Automatic Action to provide the user with a final email report. Upon closing tasks, automatic emails can be sent of each task description with full comment history to selected recipients or the assigned project email address.' => 'Dieses Plugin fügt eine neue automatische Aktion hinzu, um dem Benutzer einen abschließenden E-Mail-Bericht bereitzustellen. Beim Schließen von Aufgaben können automatische E-Mails mit jeder Aufgabenbeschreibung mit vollständigem Kommentarverlauf an ausgewählte Empfänger oder die zugewiesene Projekt-E-Mail-Adresse gesendet werden.',
+  'This plugin adds a new Automatic Action to provide any user or department to receive a final email report when a task is closed. Automatic emails are sent detailing the task description including the full comment history. Let this plugin create a digital file copy of your tasks using advanced options including emailing different recipients, adding comment logs and a fallback for a blank email subject line.' => 'Dieses Plugin fügt eine neue automatische Aktion hinzu, um jedem Benutzer oder jeder Abteilung zu ermöglichen, einen abschließenden E-Mail-Bericht zu erhalten, wenn eine Aufgabe geschlossen wird. Es werden automatische E-Mails mit einer detaillierten Aufgabenbeschreibung einschließlich des vollständigen Kommentarverlaufs gesendet. Lassen Sie dieses Plugin eine digitale Dateikopie Ihrer Aufgaben erstellen, indem Sie erweiterte Optionen verwenden, darunter das Versenden von E-Mails an verschiedene Empfänger, das Hinzufügen von Kommentarprotokollen und ein Fallback für eine leere E-Mail-Betreffzeile.',
   //
   // Action/EmailTaskHistory.php
   //
