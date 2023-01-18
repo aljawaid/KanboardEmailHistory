@@ -26,7 +26,7 @@ class EmailTaskHistory extends Base
     public function getActionRequiredParameters()
     {
         return array(
-	        'subject' => t('Email subject'),
+	        'email_subject' => t('Email subject'),
 	        'send_to' => array(
                 'assignee' => t('Send to Assignee'),
                 'creator' => t('Send to Creator'),
@@ -65,43 +65,43 @@ class EmailTaskHistory extends Base
         if ($this->getParam('check_box_include_task_title') && (!$this->getParam('check_box_include_project_name')) && (!$this->getParam('check_box_include_identifier'))) {
             ///////     TASK TITLE only
             // Subject becomes: `subject` `task title` `task id`
-            $subject = $this->getParam('subject') . ": " . $data['task']['title'] . " (#" . $data['task']['id'] . ")";
+            $subject = $this->getParam('email_subject') . ": " . $data['task']['title'] . " (#" . $data['task']['id'] . ")";
 
         } elseif (!$this->getParam('check_box_include_task_title') && ($this->getParam('check_box_include_project_name')) && (!$this->getParam('check_box_include_identifier'))) {
             ///////     PROJECT NAME only
             // Subject becomes: `subject` `project name`
             $project = $this->projectModel->getById($data['task']['project_id']);
-            $subject = $this->getParam('subject') . ": " . $project['name'];
+            $subject = $this->getParam('email_subject') . ": " . $project['name'];
 
         } elseif (!$this->getParam('check_box_include_task_title') && (!$this->getParam('check_box_include_project_name')) && ($this->getParam('check_box_include_identifier'))) {
             ///////     PROJECT IDENTIFIER only
             // Subject becomes: `subject` `project identifier`
             $project = $this->projectModel->getById($data['task']['project_id']);
-            $subject = $this->getParam('subject') . ": " . $project['identifier'];
+            $subject = $this->getParam('email_subject') . ": " . $project['identifier'];
 
         } elseif ($this->getParam('check_box_include_task_title') && (!$this->getParam('check_box_include_project_name')) && ($this->getParam('check_box_include_identifier'))) {
             ///////     PROJECT IDENTIFIER + TITLE
             // Subject becomes: `subject` `project identifier` `task title` `task id`
             $project = $this->projectModel->getById($data['task']['project_id']);
-            $subject = $this->getParam('subject') . ": " . $project['identifier'] . " " . $data['task']['title'] . " (#" . $data['task']['id'] . ")";
+            $subject = $this->getParam('email_subject') . ": " . $project['identifier'] . " " . $data['task']['title'] . " (#" . $data['task']['id'] . ")";
 
         } elseif (!$this->getParam('check_box_include_task_title') && ($this->getParam('check_box_include_project_name')) && ($this->getParam('check_box_include_identifier'))) {
             ///////     PROJECT NAME + PROJECT IDENTIFIER
             // Subject becomes: `subject` `project identifier`
             $project = $this->projectModel->getById($data['task']['project_id']);
-            $subject = $this->getParam('subject') . ": " . $project['name'] . " " . $project['identifier'];
+            $subject = $this->getParam('email_subject') . ": " . $project['name'] . " " . $project['identifier'];
 
         } elseif ($this->getParam('check_box_include_task_title') && ($this->getParam('check_box_include_project_name')) && (!$this->getParam('check_box_include_identifier'))) {
             ///////     PROJECT NAME + TITLE
             // Subject becomes: `subject` `project name` `task title` `task id`
             $project = $this->projectModel->getById($data['task']['project_id']);
-            $subject = $this->getParam('subject') . ": " . $project['name'] . " " . $data['task']['title'] . " (#" . $data['task']['id'] . ")";
+            $subject = $this->getParam('email_subject') . ": " . $project['name'] . " " . $data['task']['title'] . " (#" . $data['task']['id'] . ")";
 
         } elseif ($this->getParam('check_box_include_task_title') && ($this->getParam('check_box_include_project_name')) && ($this->getParam('check_box_include_identifier'))) {
             ///////     PROJECT NAME + PROJECT IDENTIFIER + TITLE
             // Subject becomes: `subject` `project name` `project identifier` `task title` `task id`
             $project = $this->projectModel->getById($data['task']['project_id']);
-            $subject = $this->getParam('subject') . ": " . $project['name'] . " " .$project['identifier'] . " " . $data['task']['title'] . " (#" . $data['task']['id'] . ")";
+            $subject = $this->getParam('email_subject') . ": " . $project['name'] . " " .$project['identifier'] . " " . $data['task']['title'] . " (#" . $data['task']['id'] . ")";
 
         } else {
             ///////     NO SELECTION
