@@ -1,5 +1,5 @@
-    <h2><?= t('Choose an event') ?></h2>
 <div class="page-header step-2-form">
+    <h2><?= t('Select an event for this Automatic Action') ?></h2>
 </div>
 
 <?php if ($values['action_name'] == '\Kanboard\Plugin\KanboardEmailHistory\Action\EmailTaskHistory'): ?>
@@ -15,7 +15,7 @@
         <?= $this->form->select('event_name', $events, $values) ?>
 
         <div class="form-help">
-            <?= t('When the selected event occurs execute the corresponding action.') ?>
+            <?= t('When the selected event occurs execute the corresponding action') ?>
         </div>
 
         <div class="help-text">

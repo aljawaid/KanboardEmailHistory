@@ -36,7 +36,6 @@ return array(
   //
   'Define Automatic Action Parameters' => '',
   'Selected Action' => '',
-  'Event' => '',
   'Selected Event' => '',
   'Options' => '',
   'Activity Report' => '',
@@ -89,4 +88,12 @@ return array(
   //
   'Comments' => '',
   'No comments' => '',
+  //
+  // action_creation/event.php
+  //
+  'Select an event for this Automatic Action' => '',
+  'Event' => '',
+  'When the selected event occurs execute the corresponding action' => '',
+  'This Automatic Action emails a final report once the task is closed. Emails are sent individually detailing the task description and full comment history.' => '',
+  'An automatic comment is added to the task for each successful email sent.' => '',
 );
