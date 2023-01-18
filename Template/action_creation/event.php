@@ -22,7 +22,9 @@
         </div>
 
         <?= $this->modal->submitButtons(array(
-            'submitLabel' => t('Next step')
+            'submitLabel' => t('Next step'),
+            'cancelLabel' => t('cancel'),
+            'color' => 'green-dark',
         )) ?>
     </form>
 <?php else: ?>
