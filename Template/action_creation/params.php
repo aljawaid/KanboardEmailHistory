@@ -2,16 +2,20 @@
     <h2><?= t('Define Automatic Action Parameters') ?></h2>
 </div>
 
-<form method="post" action="<?= $this->url->href('ActionCreationController', 'save', array('project_id' => $project['id'])) ?>" autocomplete="on">
+<form method="post" class="eth-form" action="<?= $this->url->href('ActionCreationController', 'save', array('project_id' => $project['id'])) ?>" autocomplete="on">
     <?= $this->form->csrf() ?>
 
     <?= $this->form->hidden('event_name', $values) ?>
     <?= $this->form->hidden('action_name', $values) ?>
 
-    <i><?= $this->form->label(t('Selected Action'), 'action_name') ?></i>
+    <i class="">
+        <?= $this->form->label(t('Selected Action'), 'action_name', array('class="selected-labels"')) ?>
+    </i>
     <?= $this->form->select('action_name', $available_actions, $values, array(), array('disabled')) ?>
 
-    <i><?= $this->form->label(t('Selected Event'), 'event_name') ?></i>
+    <i class="">
+        <?= $this->form->label(t('Selected Event'), 'event_name', array('class="selected-labels"')) ?>
+    </i>
     <?= $this->form->select('event_name', $events, $values, array(), array('disabled')) ?>
 
     <?php if ($values['action_name'] == '\Kanboard\Plugin\KanboardEmailHistory\Action\EmailTaskHistory'): ?>
