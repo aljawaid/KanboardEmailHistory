@@ -42,6 +42,11 @@
                     <?= $this->form->select('params['.$param_name.']', $links_list, $values) ?>
                 <?php elseif ($this->text->contains($param_name, 'check_box')): ?>
                     <?= $this->form->checkbox('params['.$param_name.']', $param_desc, 1, false, 'params-'.$param_name.'') ?>
+                    <?php if ($param_name == 'check_box_include_identifier'): ?>
+                        <div class="form-help">
+                            <?= t('Must be set in Project Settings') ?>
+                        </div>
+                    <?php endif ?>
                 <?php elseif ($param_name === 'priority'): ?>
                     <?= $this->form->label($param_desc, $param_name) ?>
                     <?= $this->form->select('params['.$param_name.']', $priorities_list, $values) ?>
