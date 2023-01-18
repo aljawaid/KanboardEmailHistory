@@ -59,6 +59,9 @@
                 <?php elseif (is_array($param_desc) && ($param_name == 'send_to')): ?>
                     <?= $this->form->label(t('Email Recipient(s)'), 'params['. $param_name .']') ?>
                     <?= $this->form->select('params['.$param_name.']', $param_desc, $values) ?>
+                    <div class="form-help form-help-subject">
+                        <?= t('Project email address must be set in Project Settings') ?>
+                    </div>
                 <?php elseif (is_array($param_desc) && (!$param_name == 'send_to')): ?>
                     <?= $this->form->label(ucfirst($param_name), $param_name) ?>
                     <?= $this->form->select('params['.$param_name.']', $param_desc, $values) ?>
