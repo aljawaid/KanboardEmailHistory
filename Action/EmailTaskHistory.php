@@ -61,11 +61,18 @@ class EmailTaskHistory extends Base
 
         $project = $this->projectModel->getById($data['task']['project_id']);
 
+        $subject_text = $this->getParam('email_subject');
+        $subject_text_fallback = t('Activity Report');
+
         // SUBJECT OPTIONS
         if ($this->getParam('check_box_include_task_title') && (!$this->getParam('check_box_include_project_name')) && (!$this->getParam('check_box_include_identifier'))) {
             ///////     TASK TITLE only
             // Subject becomes: `subject` `task title` `task id`
-            $subject = $this->getParam('email_subject') . ": " . $data['task']['title'] . " (#" . $data['task']['id'] . ")";
+            if ($subject_text == null) {
+                $subject = $subject_text_fallback . ": " . $data['task']['title'] . " (#" . $data['task']['id'] . ")";
+            } else {
+                $subject = $subject_text . ": " . $data['task']['title'] . " (#" . $data['task']['id'] . ")";
+            }
 
         } elseif (!$this->getParam('check_box_include_task_title') && ($this->getParam('check_box_include_project_name')) && (!$this->getParam('check_box_include_identifier'))) {
             ///////     PROJECT NAME only
@@ -106,7 +113,7 @@ class EmailTaskHistory extends Base
         } else {
             ///////     NO SELECTION
             // Subject becomes: `subject`
-            $subject = t('Activity Report');
+            $subject = $subject_text_fallback;
         }
         
         // CONSTRUCT EMAIL - SEND TO SELECTED OR ALL
@@ -148,7 +155,7 @@ class EmailTaskHistory extends Base
                     $historySent = TRUE;
 
                     // An easy way to test code is to use error_log - disabled by default
-                    //error_log("KanboardEmailHistory > Email Sent to Task Assignee",0);
+                    error_log("KanboardEmailHistory > Email Sent to Task Assignee",0);
                 } 
             }
 
@@ -184,7 +191,7 @@ class EmailTaskHistory extends Base
                     $historySent = TRUE;
 
                     // An easy way to test code is to use error_log - disabled by default
-                    //error_log("KanboardEmailHistory > Email Sent to Task Creator",0);
+                    error_log("KanboardEmailHistory > Email Sent to Task Creator",0);
                 } 
             }
 
@@ -222,7 +229,7 @@ class EmailTaskHistory extends Base
                     $historySent = TRUE;
 
                     // An easy way to test code is to use error_log - disabled by default
-                    //error_log("KanboardEmailHistory > Email Sent to Project Email Address",0);
+                    error_log("KanboardEmailHistory > Email Sent to Project Email Address",0);
                 }
             }
 
