@@ -180,7 +180,9 @@ class EmailTaskHistory extends Base
 
                     // An easy way to test code is to use error_log - disabled by default
                     error_log("KanboardEmailHistory > Email Sent to Task Assignee",0);
-                } 
+                } else {
+                    error_log("KanboardEmailHistory > Email NOT Sent to Task Assignee - No assigned email address",0);
+                }
             }
 
             // CONSTRUCT EMAIL - SEND TO 'CREATOR' 'CREATOR & PROJECT EMAIL' OR 'BOTH' OR 'ALL'
@@ -216,7 +218,9 @@ class EmailTaskHistory extends Base
 
                     // An easy way to test code is to use error_log - disabled by default
                     error_log("KanboardEmailHistory > Email Sent to Task Creator",0);
-                } 
+                } else {
+                    error_log("KanboardEmailHistory > Email NOT Sent to Task Creator - No assigned email address",0);
+                }
             }
 
             // CONSTRUCT EMAIL - SEND TO 'PROJECT_EMAIL' OR 'ALL'
@@ -254,6 +258,8 @@ class EmailTaskHistory extends Base
 
                     // An easy way to test code is to use error_log - disabled by default
                     error_log("KanboardEmailHistory > Email Sent to Project Email Address",0);
+                } else {
+                    error_log("KanboardEmailHistory > Email NOT Sent to Project Email Address - No assigned email address",0);
                 }
             }
 
