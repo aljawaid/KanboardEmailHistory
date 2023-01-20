@@ -1,6 +1,15 @@
 # Changelog
 
 
+## v2.5
+
+### What's Changed
+
+_(most recent changes are listed on top):_
+ - NEW: Add Error Message if Email Not Set
+ - FIX: Blank email subjects when no checkboxes are selected - fixes #22
+
+
 ## v2.0
 
 ### What's Changed
