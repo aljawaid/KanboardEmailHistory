@@ -62,6 +62,9 @@ Screenshots
 
 ![Project Settings](../master/Screenshots/usage-6.png "Project Settings")
 
+**Error Messages** _- compatible with [AutomaticActionUX](https://github.com/aljawaid/AutomaticActionUX)_
+
+![Error Messages](../master/Screenshots/error-messages.png "Error Messages")
 
 Usage
 -------------
