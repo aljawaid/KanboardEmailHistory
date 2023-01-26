@@ -1,5 +1,18 @@
 <hr/>
-<?= t('System Generated Email') ?>&nbsp;
+<?php if (file_exists('plugins/ApplicationBranding')): ?>
+    <span class="center">&copy;&nbsp;
+        <?php if (!empty($this->task->configModel->get('app_rename'))): ?>
+            <?= $this->task->configModel->get('app_rename') ?>
+        <?php endif ?>
+        <?php if (!empty($this->task->configModel->get('copyright_from'))): ?>
+            <?= $this->task->configModel->get('copyright_from') ?>-<?= date("Y"); ?>
+        <?php else: ?>
+            <?= date("Y"); ?>
+        <?php endif ?>
+    </span>
+<?php else: ?>
+    <?= t('System Generated Email') ?>&nbsp;
+<?php endif ?>
 
 <?php if ($this->app->config('application_url') != ''): ?>
     <?php if (isset($task['id'])): ?>
