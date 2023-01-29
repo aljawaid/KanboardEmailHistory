@@ -43,6 +43,7 @@ return array(
   //
   // notification/footer.php
   //
+  'My Workspace' => 'Mein Arbeitsbereich',
   'System Generated Email' => 'Vom System generierte E-Mail',
   'View Task' => 'Aufgabe anzeigen',
   'View Board' => 'Vorstand ansehen',
