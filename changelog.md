@@ -1,6 +1,17 @@
 # Changelog
 
 
+## v2.6
+
+### What's Changed
+
+_(most recent changes are listed on top):_
+- FIX: Inline Alignment
+- FIX: Fallback App Name for ApplicationBranding Plugin
+- NEW: Add ApplicationBranding Plugin Compatibility
+- FIX: Unix (LF) Line Endings
+
+
 ## v2.5
 
 ### What's Changed
