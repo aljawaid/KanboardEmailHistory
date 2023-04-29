@@ -1,8 +1,10 @@
-# KanboardEmailHistory
+<h1 name="readme-top">KanboardEmailHistory</h1>
+
 ![GitHub All Releases](https://img.shields.io/github/downloads/aljawaid/KanboardEmailHistory/total?style=for-the-badge "GitHub All Downloads") - **_An Automatic Action plugin for [Kanboard](https://github.com/kanboard/kanboard "Kanboard - Kanban Project Management Software")_**
 
 This plugin adds a new Automatic Action to provide any user or department to receive a final email report when a task is closed. Automatic emails are sent detailing the task description including the full comment history. Let this plugin create a digital file copy of your tasks using advanced options including emailing different recipients, adding comment logs and a fallback for a blank email subject line.
 
+<p align="right">[<a href="#readme-bottom">&#8595; Bottom</a>]</p>
 
 ## Features
 
@@ -32,6 +34,7 @@ This plugin adds a new Automatic Action to provide any user or department to rec
 - `PROJECT NAME` + `TASK TITLE`
 - `PROJECT NAME` + `PROJECT IDENTIFIER` + `TASK TITLE`
 
+<p align="right">[<a href="#readme-bottom">&#8595; Bottom</a>] [<a href="#readme-top">&#8593; Top</a>]</p>
 
 ## Screenshots
 
@@ -63,11 +66,13 @@ This plugin adds a new Automatic Action to provide any user or department to rec
 
 ![Error Messages](../master/Screenshots/error-messages.png "Error Messages")
 
+<p align="right">[<a href="#readme-bottom">&#8595; Bottom</a>] [<a href="#readme-top">&#8593; Top</a>]</p>
 
 ## Usage
 
 Go to `Project` &#10562; `Automatic Actions` &#10562; `EmailTaskHistory > Send task description and complete comment history on task closure` &#10562; _Enter parameter values for the action_
 
+<p align="right">[<a href="#readme-bottom">&#8595; Bottom</a>] [<a href="#readme-top">&#8593; Top</a>]</p>
 
 ## Installation & Compatibility
 
@@ -98,6 +103,7 @@ Go to `Project` &#10562; `Automatic Actions` &#10562; `EmailTaskHistory > Send t
 
 </details>
 
+<p align="right">[<a href="#readme-bottom">&#8595; Bottom</a>] [<a href="#readme-top">&#8593; Top</a>]</p>
 
 ## Authors & Contributors
 
@@ -105,7 +111,11 @@ Go to `Project` &#10562; `Automatic Actions` &#10562; `EmailTaskHistory > Send t
 - [Craig Crosby](https://github.com/creecros) - Contributor
 - _Contributors welcome_
 
+<p align="right">[<a href="#readme-bottom">&#8595; Bottom</a>] [<a href="#readme-top">&#8593; Top</a>]</p>
 
 ## License
 
 - This project is distributed under the [MIT License](../master/LICENSE "Read The MIT license")
+
+<a name="readme-bottom"></a>
+<p align="right">[<a href="#readme-top">&#8593; Top</a>]</p>
