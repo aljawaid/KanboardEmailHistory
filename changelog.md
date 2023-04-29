@@ -124,5 +124,6 @@ _(most recent changes are listed on top):_
 - NEW: Added `en_GB` translations
 - Rename EmailFullTaskHistory to EmailTaskHistory
 
+---
 
 Read the full [**Changelog**](../master/changelog.md "See changes") or view the [**README**](../master/README.md "View README")
