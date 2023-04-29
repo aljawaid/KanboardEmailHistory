@@ -1,6 +1,17 @@
 <h1 name="readme-top">KanboardEmailHistory</h1>
-
-![GitHub All Releases](https://img.shields.io/github/downloads/aljawaid/KanboardEmailHistory/total?style=for-the-badge "GitHub All Downloads") - **_An Automatic Action plugin for [Kanboard](https://github.com/kanboard/kanboard "Kanboard - Kanban Project Management Software")_**
+<p align="center">
+    <img src="https://img.shields.io/github/v/release/aljawaid/KanboardEmailHistory?style=for-the-badge&color=brightgreen" alt="GitHub Latest Release (by date)" title="GitHub Latest Release (by date)">
+    <img src="https://img.shields.io/github/downloads/aljawaid/KanboardEmailHistory/total?style=for-the-badge&color=orange" alt="GitHub All Releases" title="GitHub All Downloads">
+    <img src="https://img.shields.io/github/directory-file-count/aljawaid/KanboardEmailHistory?style=for-the-badge&color=orange" alt="GitHub Repository File Count" title="GitHub Repository File Count">
+    <img src="https://img.shields.io/github/repo-size/aljawaid/KanboardEmailHistory?style=for-the-badge&color=orange" alt="GitHub Repository Size" title="GitHub Repository Size">
+    <img src="https://img.shields.io/github/languages/code-size/aljawaid/KanboardEmailHistory?style=for-the-badge&color=orange" alt="GitHub Code Size" title="GitHub Code Size">
+</p>
+<p align="center">
+    <img src="https://img.shields.io/github/discussions/aljawaid/KanboardEmailHistory?style=for-the-badge&color=blue" alt="GitHub Discussions" title="GitHub Discussions">
+    <img src="https://img.shields.io/github/commits-since/aljawaid/KanboardEmailHistory/latest?include_prereleases&style=for-the-badge&color=blue" alt="GitHub Commits Since Last Release" title="GitHub Commits Since Last Release">
+    <img src="https://img.shields.io/github/commit-activity/m/aljawaid/KanboardEmailHistory?style=for-the-badge&color=blue" alt="GitHub Commit Monthly Activity" title="GitHub Commit Monthly Activity">
+    <a href="https://github.com/kanboard/kanboard" title="Kanboard - Kanban Project Management Software"><img src="https://img.shields.io/badge/Plugin%20for-kanboard-D40000?style=for-the-badge" alt="Kanboard"></a>
+</p>
 
 This plugin adds a new Automatic Action to provide any user or department to receive a final email report when a task is closed. Automatic emails are sent detailing the task description including the full comment history. Let this plugin create a digital file copy of your tasks using advanced options including emailing different recipients, adding comment logs and a fallback for a blank email subject line.
 
