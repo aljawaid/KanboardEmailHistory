@@ -1,16 +1,34 @@
 <h1 name="readme-top">KanboardEmailHistory</h1>
 <p align="center">
-    <img src="https://img.shields.io/github/v/release/aljawaid/KanboardEmailHistory?style=for-the-badge&color=brightgreen" alt="GitHub Latest Release (by date)" title="GitHub Latest Release (by date)">
-    <img src="https://img.shields.io/github/downloads/aljawaid/KanboardEmailHistory/total?style=for-the-badge&color=orange" alt="GitHub All Releases" title="GitHub All Downloads">
-    <img src="https://img.shields.io/github/directory-file-count/aljawaid/KanboardEmailHistory?style=for-the-badge&color=orange" alt="GitHub Repository File Count" title="GitHub Repository File Count">
-    <img src="https://img.shields.io/github/repo-size/aljawaid/KanboardEmailHistory?style=for-the-badge&color=orange" alt="GitHub Repository Size" title="GitHub Repository Size">
-    <img src="https://img.shields.io/github/languages/code-size/aljawaid/KanboardEmailHistory?style=for-the-badge&color=orange" alt="GitHub Code Size" title="GitHub Code Size">
+    <a href="https://github.com/aljawaid/KanboardEmailHistory/releases">
+        <img src="https://img.shields.io/github/v/release/aljawaid/KanboardEmailHistory?style=for-the-badge&color=brightgreen" alt="GitHub Latest Release (by date)" title="GitHub Latest Release (by date)">
+    </a>
+    <a href="https://github.com/aljawaid/KanboardEmailHistory/releases">
+        <img src="https://img.shields.io/github/downloads/aljawaid/KanboardEmailHistory/total?style=for-the-badge&color=orange" alt="GitHub All Releases" title="GitHub All Downloads">
+    </a>
+    <a href="https://github.com/aljawaid/KanboardEmailHistory/releases">
+        <img src="https://img.shields.io/github/directory-file-count/aljawaid/KanboardEmailHistory?style=for-the-badge&color=orange" alt="GitHub Repository File Count" title="GitHub Repository File Count">
+    </a>
+    <a href="https://github.com/aljawaid/KanboardEmailHistory/releases">
+        <img src="https://img.shields.io/github/repo-size/aljawaid/KanboardEmailHistory?style=for-the-badge&color=orange" alt="GitHub Repository Size" title="GitHub Repository Size">
+    </a>
+    <a href="https://github.com/aljawaid/KanboardEmailHistory/releases">
+        <img src="https://img.shields.io/github/languages/code-size/aljawaid/KanboardEmailHistory?style=for-the-badge&color=orange" alt="GitHub Code Size" title="GitHub Code Size">
+    </a>
 </p>
 <p align="center">
-    <img src="https://img.shields.io/github/discussions/aljawaid/KanboardEmailHistory?style=for-the-badge&color=blue" alt="GitHub Discussions" title="GitHub Discussions">
-    <img src="https://img.shields.io/github/commits-since/aljawaid/KanboardEmailHistory/latest?include_prereleases&style=for-the-badge&color=blue" alt="GitHub Commits Since Last Release" title="GitHub Commits Since Last Release">
-    <img src="https://img.shields.io/github/commit-activity/m/aljawaid/KanboardEmailHistory?style=for-the-badge&color=blue" alt="GitHub Commit Monthly Activity" title="GitHub Commit Monthly Activity">
-    <a href="https://github.com/kanboard/kanboard" title="Kanboard - Kanban Project Management Software"><img src="https://img.shields.io/badge/Plugin%20for-kanboard-D40000?style=for-the-badge" alt="Kanboard"></a>
+    <a href="https://github.com/aljawaid/KanboardEmailHistory/discussions">
+        <img src="https://img.shields.io/github/discussions/aljawaid/KanboardEmailHistory?style=for-the-badge&color=blue" alt="GitHub Discussions" title="Read Discussions">
+    </a>
+    <a href="https://github.com/aljawaid/KanboardEmailHistory/compare">
+        <img src="https://img.shields.io/github/commits-since/aljawaid/KanboardEmailHistory/latest?include_prereleases&style=for-the-badge&color=blue" alt="GitHub Commits Since Last Release" title="GitHub Commits Since Last Release">
+    </a>
+    <a href="https://github.com/aljawaid/KanboardEmailHistory/compare">
+        <img src="https://img.shields.io/github/commit-activity/m/aljawaid/KanboardEmailHistory?style=for-the-badge&color=blue" alt="GitHub Commit Monthly Activity" title="GitHub Commit Monthly Activity">
+    </a>
+    <a href="https://github.com/kanboard/kanboard" title="Kanboard - Kanban Project Management Software">
+        <img src="https://img.shields.io/badge/Plugin%20for-kanboard-D40000?style=for-the-badge&labelColor=000000" alt="Kanboard">
+    </a>
 </p>
 
 This plugin adds a new Automatic Action to provide any user or department to receive a final email report when a task is closed. Automatic emails are sent detailing the task description including the full comment history. Let this plugin create a digital file copy of your tasks using advanced options including emailing different recipients, adding comment logs and a fallback for a blank email subject line.
@@ -128,5 +146,30 @@ Go to `Project` &#10562; `Automatic Actions` &#10562; `EmailTaskHistory > Send t
 
 - This project is distributed under the [MIT License](../master/LICENSE "Read The MIT license")
 
+---
+
+<h3 align="center">
+    <a href="https://github.com/aljawaid/KanboardEmailHistory/stargazers" title="View Stargazers">
+        <img src="https://img.shields.io/github/stars/aljawaid/KanboardEmailHistory?logo=github&style=flat-square" alt="KanboardEmailHistory">
+    </a>
+    <a href="https://github.com/aljawaid/KanboardEmailHistory/forks" title="See Forks">
+        <img src="https://img.shields.io/github/forks/aljawaid/KanboardEmailHistory?logo=github&style=flat-square" alt="KanboardEmailHistory">
+    </a>
+    <a href="https://github.com/aljawaid/KanboardEmailHistory/blob/master/LICENSE" title="Read License">
+        <img src="https://img.shields.io/github/license/aljawaid/KanboardEmailHistory?style=flat-square" alt="KanboardEmailHistory">
+    </a>
+    <a href="https://github.com/aljawaid/KanboardEmailHistory/issues" title="Open Issues">
+        <img src="https://img.shields.io/github/issues-raw/aljawaid/KanboardEmailHistory?style=flat-square" alt="KanboardEmailHistory">
+    </a>
+    <a href="https://github.com/aljawaid/KanboardEmailHistory/issues?q=is%3Aissue+is%3Aclosed" title="Closed Issues">
+        <img src="https://img.shields.io/github/issues-closed/aljawaid/KanboardEmailHistory?style=flat-square" alt="KanboardEmailHistory">
+    </a>
+    <a href="https://github.com/aljawaid/KanboardEmailHistory/discussions" title="Read Discussions">
+        <img src="https://img.shields.io/github/discussions/aljawaid/KanboardEmailHistory?style=flat-square" alt="KanboardEmailHistory">
+    </a>
+    <a href="https://github.com/aljawaid/KanboardEmailHistory/compare/" title="Latest Commits">
+        <img alt="GitHub commits since latest release (by date)" src="https://img.shields.io/github/commits-since/aljawaid/KanboardEmailHistory/latest?style=flat-square">
+    </a>
+</h3>
 <a name="readme-bottom"></a>
 <p align="right">[<a href="#readme-top">&#8593; Top</a>]</p>
