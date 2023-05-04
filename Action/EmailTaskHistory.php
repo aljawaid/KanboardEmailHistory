@@ -10,19 +10,18 @@ use Kanboard\Action\Base;
 
 class EmailTaskHistory extends Base
 {
-   
     public function getDescription()
     {
         return t('EmailTaskHistory > Send task description and complete comment history on task closure');
     }
-   
+
     public function getCompatibleEvents()
     {
         return array(
             TaskModel::EVENT_CLOSE,
         );
     }
-   
+
     public function getActionRequiredParameters()
     {
         return array(
@@ -41,7 +40,7 @@ class EmailTaskHistory extends Base
             'check_box_include_identifier' => t('Include the Project Identifier in the subject line?'),
         );
     }
-   
+
     public function getEventRequiredParameters()
     {
         return array(
@@ -49,14 +48,14 @@ class EmailTaskHistory extends Base
             // These are event parameters and the task close event does not have a comment parameter
         );
     }
-    
+
     public function doAction(array $data)
     {
         // TASK COMMENTS
         // here is where we will pull all the comments from a task using the same method in the TaskViewController, note we would need to add the user metadata model up above in "use"
         $commentSortingDirection = $this->userMetadataCacheDecorator->get(UserMetadataModel::KEY_COMMENT_SORTING_DIRECTION, 'ASC');
         $comments = $this->commentModel->getAll($data['task']['id'], $commentSortingDirection);
-        
+
         $historySent = FALSE;
 
         $project = $this->projectModel->getById($data['task']['project_id']);
@@ -139,18 +138,18 @@ class EmailTaskHistory extends Base
             // Subject becomes: `subject`
             $subject = $subject_text_fallback;
         }
-        
+
         // CONSTRUCT EMAIL - SEND TO SELECTED OR ALL
         if ($this->getParam('send_to') !== null) {
             $send_to = $this->getParam('send_to');
         } else {
             $send_to = 'all';
         }
-        
+
             // CONSTRUCT EMAIL - SEND TO 'ASSIGNEE' 'ASSIGNEE & PROJECT EMAIL' OR 'BOTH' OR 'ALL'
             if ($send_to == 'assignee'|| $send_to == 'assignee_project_email' || $send_to == 'both' || $send_to == 'all') {
                 $user = $this->userModel->getById($data['task']['owner_id']);
-    
+
                 if (! empty($user['email'])) {
                     $myHTML = $this->template->render('kanboardEmailHistory:notification/task_create', array('task' => $data['task']));
                     $myHTML = $myHTML . $this->template->render('kanboardEmailHistory:task_comments/show', array(
@@ -160,7 +159,7 @@ class EmailTaskHistory extends Base
                         'editable' => false,
                     ));
                     $myHTML = $myHTML . $this->template->render('kanboardEmailHistory:notification/footer', array('task' => $data['task']));
-                    
+
                     // Send email
                     $this->emailClient->send(
                         $user['email'],
@@ -175,7 +174,7 @@ class EmailTaskHistory extends Base
                     	'user_id' => $user['id'],
                     	'task_id' => $data['task']['id'],
                     ));
-                    
+
                     $historySent = TRUE;
 
                     // An easy way to test code is to use error_log - disabled by default
@@ -188,7 +187,7 @@ class EmailTaskHistory extends Base
             // CONSTRUCT EMAIL - SEND TO 'CREATOR' 'CREATOR & PROJECT EMAIL' OR 'BOTH' OR 'ALL'
             if ($send_to == 'creator' || $send_to == 'creator_project_email' || $send_to == 'both' || $send_to == 'all') {
                 $user = $this->userModel->getById($data['task']['creator_id']);
-    
+
                 if (! empty($user['email'])) {
                     $myHTML = $this->template->render('kanboardEmailHistory:notification/task_create', array('task' => $data['task']));
                     $myHTML = $myHTML . $this->template->render('kanboardEmailHistory:task_comments/show', array(
@@ -265,10 +264,9 @@ class EmailTaskHistory extends Base
 
         return $historySent;
     }
-   
+
     public function hasRequiredCondition(array $data)
     {
         return true;
     }
-
 }
