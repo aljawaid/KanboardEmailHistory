@@ -17,25 +17,25 @@
     <li class="">
         <?= t('Project:') ?> <strong><?= $this->text->e($task['project_name']) ?></strong>
     </li>
-    <?php if (! empty($task['priority'])): ?>
+    <?php if (!empty($task['priority'])): ?>
         <li class="">
             <hr style="list-style-type: none;">
             <?= t('Priority:') ?> <strong><?= $this->text->e($task['priority']) ?></strong>
         </li>
     <?php endif ?>
-    <?php if (! empty($task['reference'])): ?>
+    <?php if (!empty($task['reference'])): ?>
         <li class="">
             <?= t('Reference:') ?> <strong><?= $this->task->renderReference($task) ?></strong>
         </li>
     <?php endif ?>
-    <?php if (! empty($task['score'])): ?>
+    <?php if (!empty($task['score'])): ?>
         <li class="">
             <?= t('Complexity:') ?> <strong><?= $this->text->e($task['score']) ?></strong>
         </li>
     <?php endif ?>
     <li class="">
         <hr style="list-style-type: none;">
-        <?= t('Created:').' '.$this->dt->datetime($task['date_creation']) ?>
+        <?= t('Created:') . ' ' . $this->dt->datetime($task['date_creation']) ?>
     </li>
     <?php if ($task['date_started']): ?>
         <li class="">
@@ -43,11 +43,11 @@
         </li>
     <?php endif ?>
     <li class="">
-        <?= t('Modified:').' '.$this->dt->datetime($task['date_modification']) ?>
+        <?= t('Modified:') . ' ' . $this->dt->datetime($task['date_modification']) ?>
     </li>
     <?php if ($task['date_due']): ?>
         <li class="">
-            <strong><?= t('Due Date:').' '.$this->dt->datetime($task['date_due']) ?></strong>
+            <strong><?= t('Due Date:') . ' ' . $this->dt->datetime($task['date_due']) ?></strong>
         </li>
     <?php endif ?>
     <?php if ($task['date_completed']): ?>
@@ -56,15 +56,15 @@
             <hr style="list-style-type: none;">
         </li>
     <?php endif ?>
-    <?php if (! empty($task['creator_username'])): ?>
+    <?php if (!empty($task['creator_username'])): ?>
         <li class="">
-            <?= t('Created by %s', $task['creator_name'] ?: $task['creator_username']) ?>
+            <?= t('Created by %s', $task['creator_name'] ? : $task['creator_username']) ?>
         </li>
     <?php endif ?>
     <li class="">
         <strong>
-            <?php if (! empty($task['assignee_username'])): ?>
-                <?= t('Assigned to %s', $task['assignee_name'] ?: $task['assignee_username']) ?>
+            <?php if (!empty($task['assignee_username'])): ?>
+                <?= t('Assigned to %s', $task['assignee_name'] ? : $task['assignee_username']) ?>
             <?php else: ?>
                 <i><?= t('Nobody was assigned to this task') ?></i>
             <?php endif ?>
@@ -74,18 +74,18 @@
         <hr style="list-style-type: none;">
         <?= t('Board Column:') ?> <strong><?= $this->text->e($task['column_title']) ?></strong>
     </li>
-    <?php if (! empty($task['swimlane_name'])): ?>
+    <?php if (!empty($task['swimlane_name'])): ?>
         <li class="">
             <?= t('Swimlane:') ?> <strong><?= $this->text->e($task['swimlane_name']) ?></strong>
         </li>
     <?php endif ?>
-    <?php if (! empty($task['category_name'])): ?>
+    <?php if (!empty($task['category_name'])): ?>
         <li class="">
             <?= t('Category:') ?> <strong><?= $this->text->e($task['category_name']) ?></strong>
         </li>
     <?php endif ?>
     <li class="">
-        <?= t('Task Position:').' '.$this->text->e($task['position']) ?>
+        <?= t('Task Position:') . ' ' . $this->text->e($task['position']) ?>
     </li>
     <?php if ($task['recurrence_status'] == \Kanboard\Model\TaskModel::RECURRING_STATUS_PENDING): ?>
         <li class="">
@@ -102,20 +102,20 @@
             <?php if ($task['recurrence_parent']): ?>
                 <li>
                     <?= t('This task was created by: ') ?>
-                    <?= $this->url->link('#'.$task['recurrence_parent'], 'TaskViewController', 'show', array('task_id' => $task['recurrence_parent'], 'project_id' => $task['project_id'])) ?>
+                    <?= $this->url->link('#' . $task['recurrence_parent'], 'TaskViewController', 'show', array('task_id' => $task['recurrence_parent'], 'project_id' => $task['project_id'])) ?>
                 </li>
             <?php endif ?>
             <?php if ($task['recurrence_child']): ?>
                 <li>
                     <?= t('This task has created this child task: ') ?>
-                    <?= $this->url->link('#'.$task['recurrence_child'], 'TaskViewController', 'show', array('task_id' => $task['recurrence_child'], 'project_id' => $task['project_id'])) ?>
+                    <?= $this->url->link('#' . $task['recurrence_child'], 'TaskViewController', 'show', array('task_id' => $task['recurrence_child'], 'project_id' => $task['project_id'])) ?>
                 </li>
             <?php endif ?>
         <?php endif ?>
     <?php endif ?>
 </ul>
 <hr>
-<?php if (! empty($task['description'])): ?>
+<?php if (!empty($task['description'])): ?>
     <h3><?= t('Description') ?></h3>
     <?= $this->text->markdown($task['description'], true) ?>
 <?php endif ?>
