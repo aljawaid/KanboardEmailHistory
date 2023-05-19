@@ -150,7 +150,7 @@ class EmailTaskHistory extends Base
         }
 
         // CONSTRUCT EMAIL - SEND TO 'ASSIGNEE' 'ASSIGNEE & PROJECT EMAIL' OR 'BOTH' OR 'ALL'
-        if ($send_to == 'assignee'|| $send_to == 'assignee_project_email' || $send_to == 'both' || $send_to == 'all') {
+        if ($send_to == 'assignee' || $send_to == 'assignee_project_email' || $send_to == 'both' || $send_to == 'all') {
             $user = $this->userModel->getById($data['task']['owner_id']);
 
             if (!empty($user['email'])) {
@@ -170,16 +170,16 @@ class EmailTaskHistory extends Base
                     $myHTML
                 );
                 // Add comment to task to show an email has been fired
-                $this->commentModel->create( array(
+                $this->commentModel->create(array(
                     'comment' => t('TASK CLOSED: A copy of the task history has been emailed to @' . $user['username'] . ' (Task Assignee) [Subject: ' . $subject . ']'),
                     'user_id' => $user['id'],
                     'task_id' => $data['task']['id'],
                 ));
                 $historySent = true;
                 // An easy way to test code is to use error_log - disabled by default
-                error_log("KanboardEmailHistory > Email Sent to Task Assignee",0);
+                error_log("KanboardEmailHistory > Email Sent to Task Assignee", 0);
             } else {
-                error_log("KanboardEmailHistory > Email NOT Sent to Task Assignee - No assigned email address",0);
+                error_log("KanboardEmailHistory > Email NOT Sent to Task Assignee - No assigned email address", 0);
             }
         }
 
@@ -206,7 +206,7 @@ class EmailTaskHistory extends Base
                 );
 
                 // Add comment to task to show an email has been fired
-                $this->commentModel->create( array(
+                $this->commentModel->create(array(
                     'comment' => t('TASK CLOSED: A copy of the task history has been emailed to @' . $user['username'] . ' (Task Creator) [Subject: ' . $subject . ']'),
                     'user_id' => $user['id'],
                     'task_id' => $data['task']['id'],
@@ -215,19 +215,18 @@ class EmailTaskHistory extends Base
                 $historySent = true;
 
                 // An easy way to test code is to use error_log - disabled by default
-                error_log("KanboardEmailHistory > Email Sent to Task Creator",0);
+                error_log("KanboardEmailHistory > Email Sent to Task Creator", 0);
             } else {
-                error_log("KanboardEmailHistory > Email NOT Sent to Task Creator - No assigned email address",0);
+                error_log("KanboardEmailHistory > Email NOT Sent to Task Creator - No assigned email address", 0);
             }
         }
 
         // CONSTRUCT EMAIL - SEND TO 'PROJECT_EMAIL' OR 'ALL'
         if ($send_to == 'project_email' || $send_to == 'assignee_project_email' || $send_to == 'creator_project_email' || $send_to == 'all') {
-
             $user = $this->userModel->getById($data['task']['creator_id']);
             $project = $this->projectModel->getById($data['task']['project_id']);
 
-            if (! empty($project['email'])) {
+            if (!empty($project['email'])) {
                 $myHTML = $this->template->render('kanboardEmailHistory:notification/task_create', array('task' => $data['task']));
                 $myHTML = $myHTML . $this->template->render('kanboardEmailHistory:task_comments/show', array(
                     'task' => $data['task'],
@@ -246,7 +245,7 @@ class EmailTaskHistory extends Base
                 );
 
                 // Add comment to task to show an email has been fired
-                $this->commentModel->create( array(
+                $this->commentModel->create(array(
                     'comment' => t('TASK CLOSED: A copy of the task history has been emailed to the project email address [Subject: ' . $subject . ']'),
                     'user_id' => $user['id'],
                     'task_id' => $data['task']['id'],
@@ -255,9 +254,9 @@ class EmailTaskHistory extends Base
                 $historySent = true;
 
                 // An easy way to test code is to use error_log - disabled by default
-                error_log("KanboardEmailHistory > Email Sent to Project Email Address",0);
+                error_log("KanboardEmailHistory > Email Sent to Project Email Address", 0);
             } else {
-                error_log("KanboardEmailHistory > Email NOT Sent to Project Email Address - No assigned email address",0);
+                error_log("KanboardEmailHistory > Email NOT Sent to Project Email Address - No assigned email address", 0);
             }
         }
 
