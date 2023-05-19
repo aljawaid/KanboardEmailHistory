@@ -37,7 +37,7 @@ _(most recent changes are listed on top):_
 - NEW: Add Task Status to Comment - mention that the task has been closed (for audit purposes)
 - Better Plugin Description
 - FIX: Parameter Name
-- FIX: Language String 
+- FIX: Language String
 - FIX: Clarify if Empty Subject When Rendered in AutomaticActionUX - **Breaking Change:** renamed `subject` to `email_subject`
 - NEW: Add AutomaticActionUX Compatibility - Fixes #20 Format Related Form Fields in Rendered Form in `action/index.php`
 - FIX: Better Solution for HTML `label` Element Usage - default code is not compatible with screenreaders and keyboards as the label ID was wrong for the relevant parameter
@@ -85,7 +85,7 @@ _(most recent changes are listed on top):_
 - Change License to MIT
 - UPDATE: Readme with Usage Instructions
 
-#### Any Automatic Actions created before v2.0 will need to be re-created due to the email subject parameter needing to be more specific for cross plugin compatibility
+**Note: Any Automatic Actions created before v2.0 will need to be re-created due to the email subject parameter needing to be more specific for cross plugin compatibility**
 
 
 ## v1.2
