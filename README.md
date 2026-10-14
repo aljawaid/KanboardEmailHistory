@@ -109,14 +109,8 @@ Go to `Project` &#10562; `Automatic Actions` &#10562; `EmailTaskHistory > Send t
     <a href="https://github.com/aljawaid/KanboardEmailHistory/actions/workflows/linter.yml">
         <img src="https://github.com/aljawaid/KanboardEmailHistory/actions/workflows/linter.yml/badge.svg?branch=master&event=push" alt="Code Scanning" title="View Test">
     </a>
-    <a href="https://github.com/aljawaid/KanboardEmailHistory/actions/workflows/php-compatibility-7.4.yaml">
-        <img src="https://github.com/aljawaid/KanboardEmailHistory/actions/workflows/php-compatibility-7.4.yaml/badge.svg?branch=master&event=push" alt="PHP Compatibility Test" title="View Test">
-    </a>
-    <a href="https://github.com/aljawaid/KanboardEmailHistory/actions/workflows/php-compatibility-8.0.yaml">
-        <img src="https://github.com/aljawaid/KanboardEmailHistory/actions/workflows/php-compatibility-8.0.yaml/badge.svg?branch=master&event=push" alt="PHP Compatibility Test" title="View Test">
-    </a>
-    <a href="https://github.com/aljawaid/KanboardEmailHistory/actions/workflows/php-compatibility-8.2.yaml">
-        <img src="https://github.com/aljawaid/KanboardEmailHistory/actions/workflows/php-compatibility-8.2.yaml/badge.svg?branch=master&event=push" alt="PHP Compatibility Test" title="View Test">
+    <a href="https://github.com/aljawaid/KanboardEmailHistory/actions/workflows/php-compatibility.yaml">
+        <img src="https://github.com/aljawaid/KanboardEmailHistory/actions/workflows/php-compatibility.yaml/badge.svg?branch=master&event=push" alt="PHP Compatibility Test" title="View Test">
     </a>
 </p>
 
