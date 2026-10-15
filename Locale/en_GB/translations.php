@@ -1,14 +1,8 @@
 <?php
 
 return array(
-    //
-    // GENERAL
-    //
-    'This plugin adds a new Automatic Action to provide any user or department to receive a final email report when a task is closed. Automatic emails are sent detailing the task description including the full comment history. Let this plugin create a digital file copy of your tasks using advanced options including emailing different recipients, adding comment logs and a fallback for a blank email subject line.' => 'This plugin adds a new Automatic Action to provide any user or department to receive a final email report when a task is closed. Automatic emails are sent detailing the task description including the full comment history. Let this plugin create a digital file copy of your tasks using advanced options including emailing different recipients, adding comment logs and a fallback for a blank email subject line.',
-    //
-    // Action/EmailTaskHistory.php
-    //
-    'EmailTaskHistory > Send task description and complete comment history on task closure' => 'EmailTaskHistory > Send task description and complete comment history on task closure',
+    'This plugin adds an Automatic Action that queues a final email report when a task is closed. Reports include the task description and the comment history permitted for each recipient. Recipient selection, subject composition, duplicate-address protection and task audit comments are configurable.' => 'This plugin adds an Automatic Action that queues a final email report when a task is closed. Reports include the task description and the comment history permitted for each recipient. Recipient selection, subject composition, duplicate-address protection and task audit comments are configurable.',
+    'EmailTaskHistory > Send task description and permitted comment history on task closure' => 'EmailTaskHistory > Send task description and permitted comment history on task closure',
     'Email Subject' => 'Email Subject',
     'Send to Assignee' => 'Send to Assignee',
     'Send to Creator' => 'Send to Creator',
@@ -17,40 +11,34 @@ return array(
     'Creator & Project Email' => 'Creator & Project Email',
     'Project Email' => 'Project Email',
     'Assignee, Creator & Project Email' => 'Assignee, Creator & Project Email',
-    'Include the Task Title and ID in subject line?' => 'Include the Task Title and ID in the subject line?',
+    'Include the Task Title and ID in the subject line?' => 'Include the Task Title and ID in the subject line?',
     'Include the Project Name in the subject line?' => 'Include the Project Name in the subject line?',
     'Include the Project Identifier in the subject line?' => 'Include the Project Identifier in the subject line?',
-    'TASK CLOSED: A copy of the task history has been emailed to @%s (Task Assignee) [Subject: %s]' => 'TASK CLOSED: A copy of the task history has been emailed to @%s (Task Assignee) [Subject: %s]',
-    'TASK CLOSED: A copy of the task history has been emailed to @%s (Task Creator) [Subject: %s]' => 'TASK CLOSED: A copy of the task history has been emailed to @%s (Task Creator) [Subject: %s]',
-    'TASK CLOSED: A copy of the task history has been emailed to the project email address [Subject: %s]' => 'TASK CLOSED: A copy of the task history has been emailed to the project email address [Subject: %s]',
-    //
-    // action_creation/params.php
-    //
+    'TASK CLOSED: The task history email was queued for %s (%s) [Subject: %s]' => 'TASK CLOSED: The task history email was queued for %s (%s) [Subject: %s]',
+    'Task assignee' => 'Task assignee',
+    'Task creator' => 'Task creator',
+    'project email address' => 'project email address',
+    'Unknown user' => 'Unknown user',
     'Define Automatic Action Parameters' => 'Define Automatic Action Parameters',
     'Selected Action' => 'Selected Action',
     'Selected Event' => 'Selected Event',
     'Options' => 'Options',
     'Activity Report' => 'Activity Report',
     'Email Recipient(s)' => 'Email Recipient(s)',
+    'Must be set in Project Settings' => 'Must be set in Project Settings',
+    'Project email address must be set in Project Settings' => 'Project email address must be set in Project Settings',
     'If left blank then "Activity Report" is used as the subject' => 'If left blank then "Activity Report" is used as the subject',
-    //
-    // comment/show.php
-    //
-    'Created at:' => 'Created',
+    'Recipient privacy' => 'Recipient privacy',
+    'Users receive comments available to their Kanboard role. Project email addresses receive only standard-user comments. If a background job has no user session, its audit comment is attributed to the task creator.' => 'Users receive comments available to their Kanboard role. Project email addresses receive only standard-user comments. If a background job has no user session, its audit comment is attributed to the task creator.',
+    'Created at:' => 'Created:',
     'Local Time' => 'Local Time',
     'LT' => 'LT',
-    'Updated at:' => 'Updated',
+    'Updated at:' => 'Updated:',
     'ID: ' => 'ID: ',
-    //
-    // notification/footer.php
-    //
     'My Workspace' => 'My Workspace',
     'System Generated Email' => 'System Generated Email',
     'View Task' => 'View Task',
     'View Board' => 'View Board',
-    //
-    // notification/task_create.php
-    //
     'Summary' => 'Summary',
     'Task Status:' => 'Task Status:',
     'Task N°:' => 'Task N°:',
@@ -76,18 +64,11 @@ return array(
     'This task was created by: ' => 'This task was created by: ',
     'This task has created this child task: ' => 'This task has created this child task: ',
     'Description' => 'Description',
-    //
-    // task_comments/show.php
-    //
     'Comments' => 'Comments',
-    'No comments' => 'No comments',
-    //
-    // action_creation/event.php
-    //
+    'No comments available for this recipient' => 'No comments available for this recipient',
     'Select an event for this Automatic Action' => 'Select an event for this Automatic Action',
     'Event' => 'Event',
     'When the selected event occurs execute the corresponding action' => 'When the selected event occurs execute the corresponding action',
-    'Description' => 'Description',
-    'This Automatic Action emails a final report once the task is closed. Emails are sent individually detailing the task description and full comment history.' => 'This Automatic Action emails a final report once the task is closed. Emails are sent individually detailing the task description and full comment history.',
-    'A comment is automatically added to the task for each successful email sent.' => 'A comment is automatically added to the task for each successful email sent.',
+    'This Automatic Action queues a final report when the task is closed. Each recipient receives the task description and only the comments permitted for that recipient.' => 'This Automatic Action queues a final report when the task is closed. Each recipient receives the task description and only the comments permitted for that recipient.',
+    'One standard-visibility audit comment is added for each unique email address accepted by the mail queue.' => 'One standard-visibility audit comment is added for each unique email address accepted by the mail queue.',
 );

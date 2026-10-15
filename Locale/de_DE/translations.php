@@ -1,93 +1,74 @@
 <?php
 
 return array(
-    //
-    // GENERAL
-    //
-    'This plugin adds a new Automatic Action to provide any user or department to receive a final email report when a task is closed. Automatic emails are sent detailing the task description including the full comment history. Let this plugin create a digital file copy of your tasks using advanced options including emailing different recipients, adding comment logs and a fallback for a blank email subject line.' => 'Dieses Plugin fügt eine neue automatische Aktion hinzu, um jedem Benutzer oder jeder Abteilung zu ermöglichen, einen abschließenden E-Mail-Bericht zu erhalten, wenn eine Aufgabe geschlossen wird. Es werden automatische E-Mails mit einer detaillierten Aufgabenbeschreibung einschließlich des vollständigen Kommentarverlaufs gesendet. Lassen Sie dieses Plugin eine digitale Dateikopie Ihrer Aufgaben erstellen, indem Sie erweiterte Optionen verwenden, darunter das Versenden von E-Mails an verschiedene Empfänger, das Hinzufügen von Kommentarprotokollen und ein Fallback für eine leere E-Mail-Betreffzeile.',
-    //
-    // Action/EmailTaskHistory.php
-    //
-    'EmailTaskHistory > Send task description and complete comment history on task closure' => 'EmailTaskHistory > Aufgabenbeschreibung und vollständigen Kommentarverlauf beim Aufgabenabschluss senden',
-    'Email Subject' => 'E-Mail Betreff',
-    'Send to Assignee' => 'An Zuständigen senden',
-    'Send to Creator' => 'An Ersteller senden',
-    'Assignee & Creator' => 'Beauftragter & Schöpfer',
-    'Assignee & Project Email' => 'Beauftragter & Projekt-E-Mail',
-    'Creator & Project Email' => 'Ersteller- und Projekt-E-Mail',
+    'This plugin adds an Automatic Action that queues a final email report when a task is closed. Reports include the task description and the comment history permitted for each recipient. Recipient selection, subject composition, duplicate-address protection and task audit comments are configurable.' => 'Dieses Plugin fügt eine automatische Aktion hinzu, die beim Schließen einer Aufgabe einen abschließenden E-Mail-Bericht in die Warteschlange stellt. Berichte enthalten die Aufgabenbeschreibung und den für den jeweiligen Empfänger zulässigen Kommentarverlauf. Empfängerauswahl, Betreffzusammenstellung, Schutz vor doppelten Adressen und Audit-Kommentare sind konfigurierbar.',
+    'EmailTaskHistory > Send task description and permitted comment history on task closure' => 'EmailTaskHistory > Aufgabenbeschreibung und zulässigen Kommentarverlauf beim Schließen der Aufgabe senden',
+    'Email Subject' => 'E-Mail-Betreff',
+    'Send to Assignee' => 'An die zuständige Person senden',
+    'Send to Creator' => 'An die erstellende Person senden',
+    'Assignee & Creator' => 'Zuständige und erstellende Person',
+    'Assignee & Project Email' => 'Zuständige Person und Projekt-E-Mail',
+    'Creator & Project Email' => 'Erstellende Person und Projekt-E-Mail',
     'Project Email' => 'Projekt-E-Mail',
-    'Assignee, Creator & Project Email' => 'Empfänger, Ersteller und Projekt-E-Mail',
-    'Include the Task Title and ID in subject line?' => 'Den Aufgabentitel und die ID in die Betreffzeile aufnehmen?',
-    'Include the Project Name in the subject line?' => 'Den Projektnamen in die Betreffzeile aufnehmen?',
-    'Include the Project Identifier in the subject line?' => 'Die Projektkennung in die Betreffzeile aufnehmen?',
-    'TASK CLOSED: A copy of the task history has been emailed to @%s (Task Assignee) [Subject: %s]' => 'AUFGABE GESCHLOSSEN: Eine Kopie des Aufgabenverlaufs wurde per E-Mail an @%s (Aufgabenverantwortlicher) [Gegenstand: %s] gesendet.',
-    'TASK CLOSED: A copy of the task history has been emailed to @%s (Task Creator) [Subject: %s]' => 'AUFGABE GESCHLOSSEN: Eine Kopie des Aufgabenverlaufs wurde per E-Mail an @%s (Aufgabenersteller) [Gegenstand: %s] gesendet.',
-    'TASK CLOSED: A copy of the task history has been emailed to the project email address [Subject: %s]' => 'AUFGABE GESCHLOSSEN: Eine Kopie des Aufgabenverlaufs wurde per E-Mail an die E-Mail-Adresse des Projekts [Gegenstand: %s] gesendet',
-    //
-    // action_creation/params.php
-    //
-    'Define Automatic Action Parameters' => 'Definieren Sie automatische Aktionsparameter',
+    'Assignee, Creator & Project Email' => 'Zuständige Person, erstellende Person und Projekt-E-Mail',
+    'Include the Task Title and ID in the subject line?' => 'Aufgabentitel und ID in die Betreffzeile aufnehmen?',
+    'Include the Project Name in the subject line?' => 'Projektnamen in die Betreffzeile aufnehmen?',
+    'Include the Project Identifier in the subject line?' => 'Projektkennung in die Betreffzeile aufnehmen?',
+    'TASK CLOSED: The task history email was queued for %s (%s) [Subject: %s]' => 'AUFGABE GESCHLOSSEN: Die E-Mail mit dem Aufgabenverlauf wurde für %s (%s) in die Warteschlange gestellt [Betreff: %s]',
+    'Task assignee' => 'Zuständige Person',
+    'Task creator' => 'Erstellende Person',
+    'project email address' => 'Projekt-E-Mail-Adresse',
+    'Unknown user' => 'Unbekannter Benutzer',
+    'Define Automatic Action Parameters' => 'Parameter der automatischen Aktion festlegen',
     'Selected Action' => 'Ausgewählte Aktion',
     'Selected Event' => 'Ausgewähltes Ereignis',
     'Options' => 'Optionen',
-    'Activity Report' => 'Aufgabenaktivitätsbericht',
-    'Email Recipient(s)' => 'E-mail Empfänger',
-    'If left blank then "Activity Report" is used as the subject' => 'Wenn das Feld leer gelassen wird, wird "Aufgabenaktivitätsbericht" als Betreff verwendet',
-    //
-    // comment/show.php
-    //
-    'Created at:' => 'Hergestellt in:',
+    'Activity Report' => 'Aktivitätsbericht',
+    'Email Recipient(s)' => 'E-Mail-Empfänger',
+    'Must be set in Project Settings' => 'Muss in den Projekteinstellungen festgelegt sein',
+    'Project email address must be set in Project Settings' => 'Die Projekt-E-Mail-Adresse muss in den Projekteinstellungen festgelegt sein',
+    'If left blank then "Activity Report" is used as the subject' => 'Wenn das Feld leer bleibt, wird „Aktivitätsbericht“ als Betreff verwendet',
+    'Recipient privacy' => 'Datenschutz für Empfänger',
+    'Users receive comments available to their Kanboard role. Project email addresses receive only standard-user comments. If a background job has no user session, its audit comment is attributed to the task creator.' => 'Benutzer erhalten Kommentare, die für ihre Kanboard-Rolle freigegeben sind. Projekt-E-Mail-Adressen erhalten nur Kommentare mit Standardsichtbarkeit. Wenn ein Hintergrundauftrag keine Benutzersitzung hat, wird sein Audit-Kommentar dem Ersteller der Aufgabe zugeordnet.',
+    'Created at:' => 'Erstellt am:',
     'Local Time' => 'Ortszeit',
     'LT' => 'OZ',
     'Updated at:' => 'Aktualisiert am:',
-    'ID: ' => 'ICH WÜRDE: ',
-    //
-    // notification/footer.php
-    //
+    'ID: ' => 'ID: ',
     'My Workspace' => 'Mein Arbeitsbereich',
-    'System Generated Email' => 'Vom System generierte E-Mail',
+    'System Generated Email' => 'Automatisch erstellte E-Mail',
     'View Task' => 'Aufgabe anzeigen',
-    'View Board' => 'Vorstand ansehen',
-    //
-    // notification/task_create.php
-    //
+    'View Board' => 'Board anzeigen',
     'Summary' => 'Zusammenfassung',
     'Task Status:' => 'Aufgabenstatus:',
-    'Task N°:' => 'Aufgabe Nr.:',
+    'Task N°:' => 'Aufgabennummer:',
     'Project:' => 'Projekt:',
     'Priority:' => 'Priorität:',
-    'Reference:' => 'Bezug:',
+    'Reference:' => 'Referenz:',
     'Complexity:' => 'Komplexität:',
     'Created:' => 'Erstellt:',
-    'Started:' => 'Gestartet:',
+    'Started:' => 'Begonnen:',
     'Modified:' => 'Geändert:',
-    'Due Date:' => 'Geburtstermin:',
-    'Completed:' => 'Vollendet:',
+    'Due Date:' => 'Fälligkeitsdatum:',
+    'Completed:' => 'Abgeschlossen:',
     'Created by %s' => 'Erstellt von %s',
     'Assigned to %s' => '%s zugewiesen',
-    'Nobody was assigned to this task' => 'Niemand wurde mit dieser Aufgabe beauftragt',
+    'Nobody was assigned to this task' => 'Dieser Aufgabe wurde niemand zugewiesen',
     'Board Column:' => 'Board-Spalte:',
-    'Swimlane:' => 'Schwimmbahn:',
+    'Swimlane:' => 'Swimlane:',
     'Category:' => 'Kategorie:',
-    'Task Position:' => 'Aufgabe Position:',
-    'Recurrence:' => 'Wiederauftreten:',
-    'Recurrent task is scheduled to be generated' => 'Wiederkehrende Aufgabe soll generiert werden',
-    'Recurrent task has been generated' => 'Wiederkehrende Aufgabe wurde generiert',
+    'Task Position:' => 'Aufgabenposition:',
+    'Recurrence:' => 'Wiederholung:',
+    'Recurrent task is scheduled to be generated' => 'Die wiederkehrende Aufgabe soll erstellt werden',
+    'Recurrent task has been generated' => 'Die wiederkehrende Aufgabe wurde erstellt',
     'This task was created by: ' => 'Diese Aufgabe wurde erstellt von: ',
-    'This task has created this child task: ' => 'Diese Aufgabe hat diese untergeordnete Aufgabe erstellt: ',
+    'This task has created this child task: ' => 'Diese Aufgabe hat folgende Unteraufgabe erstellt: ',
     'Description' => 'Beschreibung',
-    //
-    // task_comments/show.php
-    //
-    'Comments' => 'Bemerkungen',
-    'No comments' => 'Keine Kommentare',
-    //
-    // action_creation/event.php
-    //
-    'Select an event for this Automatic Action' => 'Wählen Sie ein Ereignis für diese automatische Aktion aus',
+    'Comments' => 'Kommentare',
+    'No comments available for this recipient' => 'Für diesen Empfänger sind keine Kommentare verfügbar',
+    'Select an event for this Automatic Action' => 'Ereignis für diese automatische Aktion auswählen',
     'Event' => 'Ereignis',
-    'When the selected event occurs execute the corresponding action' => 'Wenn das ausgewählte Ereignis eintritt, führen Sie die entsprechende Aktion aus',
-    'Description' => 'Beschreibung',
-    'This Automatic Action emails a final report once the task is closed. Emails are sent individually detailing the task description and full comment history.' => 'Diese automatische Aktion sendet einen Abschlussbericht per E-Mail, sobald die Aufgabe abgeschlossen ist. E-Mails werden einzeln gesendet, die die Aufgabenbeschreibung und den vollständigen Kommentarverlauf enthalten.',
-    'A comment is automatically added to the task for each successful email sent.' => 'Für jede erfolgreich gesendete E-Mail wird der Aufgabe automatisch ein Kommentar hinzugefügt.',
+    'When the selected event occurs execute the corresponding action' => 'Beim ausgewählten Ereignis die zugehörige Aktion ausführen',
+    'This Automatic Action queues a final report when the task is closed. Each recipient receives the task description and only the comments permitted for that recipient.' => 'Diese automatische Aktion stellt beim Schließen der Aufgabe einen Abschlussbericht in die Warteschlange. Jeder Empfänger erhält die Aufgabenbeschreibung und nur die für ihn zulässigen Kommentare.',
+    'One standard-visibility audit comment is added for each unique email address accepted by the mail queue.' => 'Für jede eindeutige, von der E-Mail-Warteschlange akzeptierte Adresse wird ein Audit-Kommentar mit Standardsichtbarkeit hinzugefügt.',
 );

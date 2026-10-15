@@ -3,21 +3,20 @@
 namespace Kanboard\Plugin\KanboardEmailHistory;
 
 use Kanboard\Core\Plugin\Base;
-use Kanboard\Plugin\KanboardEmailHistory\Action\EmailTaskHistory;
 use Kanboard\Core\Translator;
+use Kanboard\Plugin\KanboardEmailHistory\Action\EmailTaskHistory;
 
+/**
+ * Registers the KanboardEmailHistory automatic action and presentation assets.
+ *
+ * Related test file: tests/EmailTaskHistoryTest.php.
+ */
 class Plugin extends Base
 {
     public function initialize()
     {
         $this->actionManager->register(new EmailTaskHistory($this->container));
-
-        // Template Override
-        //  - Override name should be camelCase e.g. pluginNameExampleCamelCase
         $this->template->setTemplateOverride('action_creation/event', 'kanboardEmailHistory:action_creation/event');
-
-        // CSS - Asset Hook
-        //  - Keep filename lowercase
         $this->hook->on('template:layout:css', array('template' => 'plugins/KanboardEmailHistory/Assets/css/kanboard-email-history.css'));
     }
 
@@ -28,13 +27,12 @@ class Plugin extends Base
 
     public function getPluginName()
     {
-        // Plugin Name MUST be identical to namespace for Plugin Directory to detect updated versions
         return 'KanboardEmailHistory';
     }
 
     public function getPluginDescription()
     {
-        return t('This plugin adds a new Automatic Action to provide any user or department to receive a final email report when a task is closed. Automatic emails are sent detailing the task description including the full comment history. Let this plugin create a digital file copy of your tasks using advanced options including emailing different recipients, adding comment logs and a fallback for a blank email subject line.');
+        return t('This plugin adds an Automatic Action that queues a final email report when a task is closed. Reports include the task description and the comment history permitted for each recipient. Recipient selection, subject composition, duplicate-address protection and task audit comments are configurable.');
     }
 
     public function getPluginAuthor()
@@ -44,16 +42,12 @@ class Plugin extends Base
 
     public function getPluginVersion()
     {
-        return '2.7.0';
+        return '2.8.0';
     }
 
     public function getCompatibleVersion()
     {
-        // Examples:
-        // >=1.0.37
-        // <1.0.37
-        // <=1.0.37
-        return '>=1.2.20';
+        return '>=1.2.54';
     }
 
     public function getPluginHomepage()
