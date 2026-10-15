@@ -4,18 +4,13 @@
 
 <form method="post" class="eth-form" action="<?= $this->url->href('ActionCreationController', 'save', array('project_id' => $project['id'])) ?>" autocomplete="on">
     <?= $this->form->csrf() ?>
-
     <?= $this->form->hidden('event_name', $values) ?>
     <?= $this->form->hidden('action_name', $values) ?>
 
-    <i class="">
-        <?= $this->form->label(t('Selected Action'), 'action_name', array('class="selected-labels"')) ?>
-    </i>
+    <i><?= $this->form->label(t('Selected Action'), 'action_name', array('class="selected-labels"')) ?></i>
     <?= $this->form->select('action_name', $available_actions, $values, array(), array('disabled')) ?>
 
-    <i class="">
-        <?= $this->form->label(t('Selected Event'), 'event_name', array('class="selected-labels"')) ?>
-    </i>
+    <i><?= $this->form->label(t('Selected Event'), 'event_name', array('class="selected-labels"')) ?></i>
     <?= $this->form->select('event_name', $events, $values, array(), array('disabled')) ?>
 
     <?php if ($values['action_name'] == '\Kanboard\Plugin\KanboardEmailHistory\Action\EmailTaskHistory'): ?>
@@ -40,7 +35,7 @@
                     <?= $this->form->label($param_desc, $param_name) ?>
                     <?= $this->form->select('params[' . $param_name . ']', $links_list, $values) ?>
                 <?php elseif ($this->text->contains($param_name, 'check_box')): ?>
-                    <?= $this->form->checkbox('params[' . $param_name . ']', $param_desc, 1, false, 'params-' . $param_name . '') ?>
+                    <?= $this->form->checkbox('params[' . $param_name . ']', $param_desc, 1, false, 'params-' . $param_name) ?>
                     <?php if ($param_name == 'check_box_include_identifier'): ?>
                         <div class="form-help">
                             <?= t('Must be set in Project Settings') ?>
@@ -55,13 +50,23 @@
                 <?php elseif ($this->text->contains($param_name, 'swimlane_id')): ?>
                     <?= $this->form->label($param_desc, $param_name) ?>
                     <?= $this->form->select('params[' . $param_name . ']', $swimlane_list, $values) ?>
-                <?php elseif (is_array($param_desc) && ($param_name == 'send_to')): ?>
+                <?php elseif (is_array($param_desc) && $param_name == 'send_to'): ?>
                     <?= $this->form->label(t('Email Recipient(s)'), 'params[' . $param_name . ']') ?>
                     <?= $this->form->select('params[' . $param_name . ']', $param_desc, $values) ?>
                     <div class="form-help form-help-subject">
                         <?= t('Project email address must be set in Project Settings') ?>
                     </div>
-                <?php elseif (is_array($param_desc) && (!$param_name == 'send_to')): ?>
+                    <!-- This accessible disclosure explains the intentional least-privilege recipient policy. -->
+                    <details class="kbeh-help-popover">
+                        <summary>
+                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                            <span><?= t('Recipient privacy') ?></span>
+                        </summary>
+                        <div class="kbeh-help-popover-content">
+                            <?= t('Users receive comments available to their Kanboard role. Project email addresses receive only standard-user comments. If a background job has no user session, its audit comment is attributed to the task creator.') ?>
+                        </div>
+                    </details>
+                <?php elseif (is_array($param_desc)): ?>
                     <?= $this->form->label(ucfirst($param_name), $param_name) ?>
                     <?= $this->form->select('params[' . $param_name . ']', $param_desc, $values) ?>
                 <?php else: ?>
@@ -97,7 +102,7 @@
                     <?= $this->form->label($param_desc, $param_name) ?>
                     <?= $this->form->select('params[' . $param_name . ']', $links_list, $values) ?>
                 <?php elseif ($this->text->contains($param_name, 'check_box')): ?>
-                    <?= $this->form->checkbox('params[' . $param_name . ']', $param_desc, 1, false, 'params-' . $param_name . '') ?>
+                    <?= $this->form->checkbox('params[' . $param_name . ']', $param_desc, 1, false, 'params-' . $param_name) ?>
                 <?php elseif ($param_name === 'priority'): ?>
                     <?= $this->form->label($param_desc, $param_name) ?>
                     <?= $this->form->select('params[' . $param_name . ']', $priorities_list, $values) ?>

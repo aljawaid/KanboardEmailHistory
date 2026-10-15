@@ -1,25 +1,27 @@
-<hr/>
-    <span class="" style="display: inline;">&copy;&nbsp;
-        <?php if (file_exists('plugins/ApplicationBranding')): ?>
-            <?php if (!empty($this->task->configModel->get('app_rename'))): ?>
-                <?= $this->task->configModel->get('app_rename') ?>
-            <?php else: ?>
-                <?= t('My Workspace') ?>
-            <?php endif ?>
-            <?php if (!empty($this->task->configModel->get('copyright_from'))): ?>
-                <?= $this->task->configModel->get('copyright_from') ?>-<?= date("Y"); ?>
-            <?php else: ?>
-                <?= date("Y"); ?>
-            <?php endif ?>
+<?php
+$brandingInstalled = defined('PLUGINS_DIR') && is_dir(PLUGINS_DIR . DIRECTORY_SEPARATOR . 'ApplicationBranding');
+$applicationName = $brandingInstalled ? $this->task->configModel->get('app_rename') : '';
+$copyrightFrom = $brandingInstalled ? $this->task->configModel->get('copyright_from') : '';
+?>
+<footer class="kbeh-footer">
+    <hr class="kbeh-divider">
+    <span>&copy;&nbsp;
+        <?php if ($brandingInstalled): ?>
+            <?= $this->text->e($applicationName ?: t('My Workspace')) ?>
+            <?= $this->text->e($copyrightFrom ? $copyrightFrom . '-' . date('Y') : date('Y')) ?>
         <?php else: ?>
-            <?= t('System Generated Email') ?>&nbsp;
+            <?= t('System Generated Email') ?>
         <?php endif ?>
         <?php if ($this->app->config('application_url') != ''): ?>
             <?php if (isset($task['id'])): ?>
-                - <?= $this->url->absoluteLink(t('View Task'), 'TaskViewController', 'show', array('task_id' => $task['id'], 'project_id' => $task['project_id'])) ?>
+                <?php $taskUrl = $this->url->href('TaskViewController', 'show', array('task_id' => $task['id'], 'project_id' => $task['project_id']), false, '', true) ?>
+                - <a href="<?= $this->text->e($taskUrl) ?>" target="_blank" rel="noopener noreferrer"><?= t('View Task') ?></a>
             <?php endif ?>
-            - <?= $this->url->absoluteLink(t('View Board'), 'BoardViewController', 'show', array('project_id' => $task['project_id'])) ?>
+            <?php $boardUrl = $this->url->href('BoardViewController', 'show', array('project_id' => $task['project_id']), false, '', true) ?>
+            - <a href="<?= $this->text->e($boardUrl) ?>" target="_blank" rel="noopener noreferrer"><?= t('View Board') ?></a>
         <?php endif ?>
     </span>
+</footer>
+</div>
 </body>
 </html>

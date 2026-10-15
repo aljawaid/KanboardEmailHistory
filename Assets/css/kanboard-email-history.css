@@ -1,73 +1,50 @@
-/* KANBOARD PLUGIN - CSS FILE */
+/* KanboardEmailHistory action form styles. */
 
 :root {
-    --pp-blue: #007AC9;
-    --pp-blue-alt: #00ADFF;
-    --pp-red: #B71234;
-    --pp-red-alt: #DA004C;
-    --pp-red-alt-2: #AE003D;
-    --pp-black: #000000;
-    --pp-light-grey: #8F8F8F;
-    --pp-grey: #4D4D4D;
-    --pp-white: #FFFFFF;
-    --pp-green: #2EA02E;
-    --pp-green-dark: #055D20;
-    --pp-orange: #FF6500;
-    --blue-icon-dark: #034CA6;
-    --button-blue-gradient: linear-gradient(to bottom, #7892C2 80%, #476E9E 100%);
-    --blue-border-gradient-match: #476E9E;
-    --button-background-delete: #D05C84;
-    --link-color-primary: #3366CC;
-    --header-page-margin-kbemailhistory: 5px 15px 10px 15px;
-    --page-margin-kbemailhistory: 0 15px 0 15px;
-    --title-margin-kbemailhistory: 0 15px 0 15px;
-    --border-radius-kbemailhistory: 3px;
-    --panel-background-kbemailhistory: #EEEEEE;
-    --transition-kbemailhistory: ease-in-out all .3s;
+    --kbeh-accent: light-dark(#476e9e, #78a9e6);
+    --kbeh-accent-strong: light-dark(#2f5688, #9bc2f0);
+    --kbeh-accent-soft: light-dark(#eef4fb, #293747);
+    --kbeh-border: light-dark(#aebdce, #536476);
+    --kbeh-button-start: light-dark(#287c3f, #3d8f57);
+    --kbeh-button-end: light-dark(#055d20, #1f6337);
+    --kbeh-button-border: light-dark(#055d20, #74c98a);
+    --kbeh-button-text: #ffffff;
+    --kbeh-focus: light-dark(#034ca6, #9bc2f0);
+    --kbeh-panel: light-dark(#eeeeee, #2c333b);
+    --kbeh-text: light-dark(#24384d, #e6edf3);
+    --kbeh-transition: 0.3s ease-in-out;
 }
 
-.pp-blue { color: var(--pp-blue); fill: var(--pp-blue); }
-.pp-blue-alt { color: var(--pp-blue-alt); fill: var(--pp-blue-alt); }
-.pp-red { color: var(--pp-red); fill: var(--pp-red); }
-.pp-red-alt { color: var(--pp-red-alt); fill: var(--pp-red-alt); }
-.pp-red-alt-2 { color: var(--pp-red-alt-2); fill: var(--pp-red-alt-2); }
-.pp-black { color: var(--pp-black); fill: var(--pp-black); }
-.pp-light-grey { color: var(--pp-light-grey); fill: var(--pp-light-grey); }
-.pp-grey { color: var(--pp-grey); fill: var(--pp-grey); }
-.pp-white { color: var(--pp-white); fill: var(--pp-white); }
-.pp-green { color: var(--pp-green); fill: var(--pp-green); }
-.pp-dark-green { color: var(--pp-green-dark); fill: var(--pp-green-dark); }
-.pp-orange { color: var(--pp-orange); fill: var(--pp-orange); }
-
-.display-none, .d-none { display: none; }
-
-.font-weight-bold { font-weight: bold; }
-
-.text-center { text-align: center; }
-
-.relative { position: relative; }
-
-.param-options {
-    border-radius: var(--border-radius-kbemailhistory);
-    border: 1px solid var(--blue-border-gradient-match);
+.param-options,
+.eth-form .help-text {
+    box-sizing: border-box;
+    max-width: 760px;
+    padding: 12px 16px 16px;
+    border: 1px solid var(--kbeh-border);
+    border-radius: 4px;
+    background: var(--kbeh-panel);
+    color: var(--kbeh-text);
 }
 
-.form-help-subject {
-    display: inline-block;
-    margin: auto 10px;
+.eth-form {
+    box-sizing: border-box;
+    max-width: 780px;
+    margin: 5px;
+}
+
+.eth-form select,
+.eth-form input[type="text"] {
+    box-sizing: border-box;
+    max-width: 100%;
 }
 
 .step-2-form {
     font-size: initial;
 }
 
-.eth-form {
-    margin: 5px;
-}
-
 .step-2-form h2 {
-    font-size: 1.2em;
     margin: auto 5px;
+    font-size: 1.2em;
 }
 
 .eth-form .selected-labels {
@@ -75,27 +52,116 @@
 }
 
 .eth-form .form-help {
-    display: inline-block;
+    display: block;
+    margin: 5px 0 12px;
 }
 
 .eth-form .help-text p {
     margin-bottom: 10px;
 }
 
-form.eth-form fieldset.param-options > label:nth-child(10) {
-    display: inline-block;
-    margin-right: 10px;
+.kbeh-help-popover {
+    position: relative;
+    max-width: 620px;
+    margin: 8px 0 14px;
+}
+
+.kbeh-help-popover summary {
+    display: inline-flex;
+    gap: 6px;
+    align-items: center;
+    padding: 4px 8px;
+    border: 1px solid var(--kbeh-border);
+    border-radius: 4px;
+    color: var(--kbeh-accent-strong);
+    background: var(--kbeh-accent-soft);
+    cursor: pointer;
+    list-style: none;
+    transition: color var(--kbeh-transition), background-color var(--kbeh-transition), border-color var(--kbeh-transition);
+}
+
+.kbeh-help-popover summary::-webkit-details-marker {
+    display: none;
+}
+
+.kbeh-help-popover summary:hover,
+.kbeh-help-popover summary:focus-visible {
+    border-color: var(--kbeh-accent-strong);
+    color: var(--kbeh-text);
+}
+
+.kbeh-help-popover summary:focus-visible {
+    outline: 2px solid var(--kbeh-focus);
+    outline-offset: 2px;
+}
+
+.kbeh-help-popover-content {
+    margin-top: 6px;
+    padding: 10px 12px;
+    border-left: 3px solid var(--kbeh-accent);
+    background: var(--kbeh-accent-soft);
 }
 
 .btn-green-dark {
-    background-color: var(--pp-green-dark);
-    color: var(--pp-white);
-    border-radius: var(--border-radius-kbemailhistory);
-    border: 1px solid var(--pp-green-dark);
+    border: 1px solid var(--kbeh-button-border);
+    border-radius: 4px;
+    color: var(--kbeh-button-text);
+    background: linear-gradient(to bottom, var(--kbeh-button-start) 0%, var(--kbeh-button-end) 100%);
+    transition: color var(--kbeh-transition), border-color var(--kbeh-transition), box-shadow var(--kbeh-transition), filter var(--kbeh-transition);
 }
 
-.btn-green-dark:hover {
-    color: var(--pp-green-dark);
-    background-color: var(--pp-white);
-    border: 1px solid var(--pp-green-dark);
+.btn-green-dark:hover,
+.btn-green-dark:focus-visible {
+    border-color: var(--kbeh-button-border);
+    color: var(--kbeh-button-text);
+    box-shadow: 0 0 0 2px var(--kbeh-focus);
+    filter: brightness(1.12);
+}
+
+@media screen and (max-width: 768px) {
+    .eth-form {
+        width: 100%;
+        max-width: 100%;
+        margin: 5px 0;
+    }
+
+    .param-options,
+    .eth-form .help-text {
+        width: 100%;
+        padding: 10px 12px 14px;
+    }
+
+    .eth-form select,
+    .eth-form input[type="text"],
+    .eth-form .select2-container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .eth-form .form-actions .btn {
+        min-height: 44px;
+        margin: 4px 4px 4px 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .btn-green-dark,
+    .kbeh-help-popover summary {
+        transition: none;
+    }
+}
+
+@media (forced-colors: active) {
+    .param-options,
+    .eth-form .help-text,
+    .btn-green-dark,
+    .kbeh-help-popover summary,
+    .kbeh-help-popover-content {
+        border-color: CanvasText;
+    }
+
+    .btn-green-dark,
+    .kbeh-help-popover summary {
+        forced-color-adjust: auto;
+    }
 }

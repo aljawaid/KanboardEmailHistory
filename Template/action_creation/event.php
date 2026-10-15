@@ -5,7 +5,6 @@
 <?php if ($values['action_name'] == '\Kanboard\Plugin\KanboardEmailHistory\Action\EmailTaskHistory'): ?>
     <form method="post" class="eth-form" action="<?= $this->url->href('EmailHistoryController', 'parameters', array('project_id' => $project['id'], 'plugin' => 'KanboardEmailHistory')) ?>">
         <?= $this->form->csrf() ?>
-
         <?= $this->form->hidden('action_name', $values) ?>
 
         <i><?= $this->form->label(t('Selected Action'), 'action_name', array('class="selected-labels"')) ?></i>
@@ -19,9 +18,9 @@
         </div>
 
         <fieldset class="help-text">
-            <legend class=""><?= t('Description') ?></legend>
-            <p class=""><?= t('This Automatic Action emails a final report once the task is closed. Emails are sent individually detailing the task description and full comment history.') ?></p>
-            <p class=""><?= t('A comment is automatically added to the task for each successful email sent.') ?></p>
+            <legend><?= t('Description') ?></legend>
+            <p><?= t('This Automatic Action queues a final report when the task is closed. Each recipient receives the task description and only the comments permitted for that recipient.') ?></p>
+            <p><?= t('One standard-visibility audit comment is added for each unique email address accepted by the mail queue.') ?></p>
         </fieldset>
 
         <?= $this->modal->submitButtons(array(
@@ -33,7 +32,6 @@
 <?php else: ?>
     <form method="post" action="<?= $this->url->href('ActionCreationController', 'params', array('project_id' => $project['id'])) ?>">
         <?= $this->form->csrf() ?>
-
         <?= $this->form->hidden('action_name', $values) ?>
 
         <?= $this->form->label(t('Action'), 'action_name') ?>
@@ -47,7 +45,7 @@
         </div>
 
         <?= $this->modal->submitButtons(array(
-            'submitLabel' => t('Next step')
+            'submitLabel' => t('Next step'),
         )) ?>
     </form>
 <?php endif ?>

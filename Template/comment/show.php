@@ -1,26 +1,22 @@
-<div class="comment <?= isset($preview) ? 'comment-preview' : '' ?>" id="comment-<?= $comment['id'] ?>">
-    <div class="comment-title">
+<article class="kbeh-comment" id="comment-<?= (int) $comment['id'] ?>">
+    <div class="kbeh-comment-title">
         <?php if (!empty($comment['username'])): ?>
-            <strong class="comment-username"><?= $this->text->e($comment['name'] ? : $comment['username']) ?></strong>
+            <strong><?= $this->text->e($comment['name'] ?: $comment['username']) ?></strong>
         <?php endif ?>
-        <small class="comment-date"><?= t('Created at:') ?>&nbsp;
-            <kbd class="comment-created">
-                <?= $this->dt->datetime($comment['date_creation']) ?><abbr title="<?= t('Local Time') ?>"><?= t('LT') ?></abbr>
-            </kbd>
+        <small>
+            <?= t('Created at:') ?> <?= $this->dt->datetime($comment['date_creation']) ?>
+            <abbr title="<?= t('Local Time') ?>"><?= t('LT') ?></abbr>
         </small>
-        <small class="comment-date updated-comment"><?= t('Updated at:') ?>&nbsp;
-            <kbd class="comment-updated">
-                <?= $this->dt->datetime($comment['date_modification']) ?><abbr title="<?= t('Local Time') ?>"><?= t('LT') ?></abbr>
-            </kbd>
-        </small>
-        <small class="comment-date comment-id">
-            <i class="fa fa-comment-o fa-fw"></i> <?= t('ID: ') ?> <kbd class="comment-created"><?= $this->text->e($comment['id']) ?></kbd>
-        </small>
+        <?php if ($comment['date_modification'] > $comment['date_creation']): ?>
+            <small>
+                <?= t('Updated at:') ?> <?= $this->dt->datetime($comment['date_modification']) ?>
+                <abbr title="<?= t('Local Time') ?>"><?= t('LT') ?></abbr>
+            </small>
+        <?php endif ?>
+        <small><?= t('ID: ') ?><?= (int) $comment['id'] ?></small>
     </div>
-    <div class="comment-content">
-        <div class="markdown">
-            <?= $this->text->markdown($comment['comment'], isset($is_public) && $is_public) ?>
-        </div>
+    <div class="kbeh-comment-content">
+        <?= $this->text->markdown($comment['comment'], isset($is_public) && $is_public) ?>
     </div>
-</div>
-<hr>
+</article>
+<hr class="kbeh-divider">

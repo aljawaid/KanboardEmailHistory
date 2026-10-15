@@ -1,27 +1,22 @@
-<details class="accordion-section" <?= empty($comments) ? '' : 'open' ?>>
-    <summary class="accordion-title acc-comments-title">
-        <h3 style="margin: 0; display: inline;"><?= t('Comments') ?>
-            <?php if (!empty($comments)): ?>
-                <span class="">(<?= count($comments) ?>)</span>
-            <?php endif ?>
-        </h3>
-    </summary>
-    <div class="accordion-content comments" id="comments">
-        <?php if (empty($comments)): ?>
-            <hr>
-            <div class="no-data"><i><?= t('No comments') ?></i></div>
+<section class="kbeh-comments" aria-labelledby="kbeh-comments-heading">
+    <h3 id="kbeh-comments-heading">
+        <?= t('Comments') ?>
+        <?php if (!empty($comments)): ?>
+            (<?= count($comments) ?>)
         <?php endif ?>
-        
-        <hr>
+    </h3>
+
+    <?php if (empty($comments)): ?>
+        <p><i><?= t('No comments available for this recipient') ?></i></p>
+    <?php else: ?>
         <?php foreach ($comments as $comment): ?>
             <?= $this->render('kanboardEmailHistory:comment/show', array(
-                'comment'   => $comment,
-                'task'      => $task,
-                'project'   => $project,
-                'editable'  => false,
+                'comment' => $comment,
+                'task' => $task,
+                'project' => $project,
+                'editable' => false,
                 'is_public' => isset($is_public) && $is_public,
             )) ?>
         <?php endforeach ?>
-
-    </div>
-</details>
+    <?php endif ?>
+</section>
