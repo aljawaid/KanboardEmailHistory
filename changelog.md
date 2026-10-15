@@ -1,5 +1,19 @@
 # Changelog
 
+## v2.8.0
+
+- FIX: Filter task comments by each recipient's Kanboard role
+- FIX: Limit unauthenticated project mailboxes to standard-user comments
+- FIX: De-duplicate shared recipient addresses using the least-privileged role
+- FIX: Record queue acceptance accurately without claiming final email delivery
+- FIX: Preserve custom subjects and remove unsafe control characters
+- FIX: Use the project name for project mailbox recipients
+- FIX: Generate absolute recurrence, task and board links with `noopener` and `noreferrer`
+- FIX: Correct German and French translations and complete all locale keys
+- FIX: Add responsive light and dark form and email presentation
+- FIX: Add focused behaviour and presentation compatibility tests for PHP 8.2-8.5
+- FIX: Raise the tested Kanboard compatibility floor to 1.2.54
+- FIX: Keep feature-quality linting focused by excluding unrelated repository security scanning
 
 ## v2.7
 

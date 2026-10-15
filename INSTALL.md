@@ -1,5 +1,13 @@
 # Plugin Installation
 
+## Requirements
+
+- Kanboard 1.2.54 or newer
+- PHP 8.2, 8.3, 8.4 or 8.5
+- A working Kanboard email transport and background-job runner
+
+## Installation
+
 - **Install via the [Kanboard](https://github.com/kanboard/kanboard "Kanboard - Kanban Project Management Software") Plugin Directory**
   - _Go to:_
     - Kanboard: `Plugins` &#10562; `Plugin Directory`
