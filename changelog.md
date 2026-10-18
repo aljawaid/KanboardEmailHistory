@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.8.1
+
+- FIX: Keep the automatic-action modal within narrow mobile viewports
+
 ## v2.8.0
 
 - FIX: Filter task comments by each recipient's Kanboard role

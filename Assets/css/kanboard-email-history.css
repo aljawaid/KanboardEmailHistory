@@ -119,6 +119,11 @@
 }
 
 @media screen and (max-width: 768px) {
+    #modal-box:has(.eth-form) {
+        width: calc(100vw - 24px) !important;
+        max-width: calc(100vw - 24px);
+    }
+
     .eth-form {
         width: 100%;
         max-width: 100%;
