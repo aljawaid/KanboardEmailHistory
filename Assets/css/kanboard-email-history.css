@@ -11,6 +11,8 @@
     --kbeh-button-text: #ffffff;
     --kbeh-focus: light-dark(#034ca6, #9bc2f0);
     --kbeh-panel: light-dark(#eeeeee, #2c333b);
+    --kbeh-danger: light-dark(#8f1d35, #f29aac);
+    --kbeh-danger-soft: light-dark(#fff0f3, #45242c);
     --kbeh-text: light-dark(#24384d, #e6edf3);
     --kbeh-transition: 0.3s ease-in-out;
 }
@@ -102,6 +104,67 @@
     background: var(--kbeh-accent-soft);
 }
 
+/* Administrator-only uninstall preparation keeps action data decisions explicit and theme-aware. */
+.kbeh-settings {
+    box-sizing: border-box;
+    max-width: 860px;
+}
+
+.kbeh-settings-summary {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin: 16px 0;
+}
+
+.kbeh-settings-summary > div,
+.kbeh-policy-option {
+    padding: 12px 16px;
+    border: 1px solid var(--kbeh-border);
+    border-radius: 4px;
+    background: var(--kbeh-panel);
+    color: var(--kbeh-text);
+}
+
+.kbeh-settings-summary strong {
+    display: block;
+    font-size: 1.5em;
+}
+
+.kbeh-policy-option {
+    display: block;
+    margin: 10px 0;
+}
+
+.kbeh-policy-option input {
+    margin-right: 8px;
+}
+
+.kbeh-policy-option p {
+    margin: 8px 0 0 26px;
+}
+
+.kbeh-policy-option-danger {
+    border-color: var(--kbeh-danger);
+    background: var(--kbeh-danger-soft);
+}
+
+.kbeh-danger-text {
+    color: var(--kbeh-danger);
+    font-weight: 600;
+}
+
+.kbeh-settings-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.kbeh-settings-actions form {
+    margin: 0;
+}
+
 .btn-green-dark {
     border: 1px solid var(--kbeh-button-border);
     border-radius: 4px;
@@ -147,6 +210,14 @@
         min-height: 44px;
         margin: 4px 4px 4px 0;
     }
+
+    .kbeh-settings-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .kbeh-settings-actions .btn {
+        min-height: 44px;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -162,6 +233,12 @@
     .btn-green-dark,
     .kbeh-help-popover summary,
     .kbeh-help-popover-content {
+        border-color: CanvasText;
+    }
+
+    .kbeh-policy-option,
+    .kbeh-policy-option-danger,
+    .kbeh-settings-summary > div {
         border-color: CanvasText;
     }
 

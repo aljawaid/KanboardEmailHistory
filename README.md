@@ -46,6 +46,8 @@ KanboardEmailHistory adds an Automatic Action that queues a final email report w
 - Removes control characters from subjects and falls back to `Activity Report` only when the subject is blank
 - Provides responsive, light and dark action forms with reduced-motion and forced-colour support
 - Produces responsive, light and dark email layouts with absolute task links
+- Provides an administrator-only uninstall-data policy that retains action configuration by default
+- Restores retained actions after reinstallation or permanently deletes them when explicitly selected
 
 **Email recipients**
 
@@ -105,6 +107,17 @@ KanboardEmailHistory adds an Automatic Action that queues a final email report w
 
 Go to `Project` &#10562; `Automatic Actions` &#10562; `EmailTaskHistory > Send task description and permitted comment history on task closure` &#10562; _Enter parameter values for the action_
 
+### Preparing to uninstall
+
+Kanboard 1.2.54 removes plug-in files without first calling plug-in cleanup code. To avoid leaving automatic-action records that refer to a missing class:
+
+1. Go to `Settings` &#10562; `Email History`.
+2. Keep the default retain policy to preserve every Email History event and parameter, or explicitly select permanent deletion.
+3. Save the policy and choose `Prepare for uninstall`.
+4. Only after preparation succeeds, uninstall the plug-in from Kanboard.
+
+The retain policy moves Email History actions out of Kanboard's active action list into plug-in-owned storage. Reinstall the plug-in and use `Restore saved actions` to recreate them. The deletion policy removes active and saved Email History action records permanently and cannot be undone. Other automatic-action classes are never changed.
+
 <p align="right">[<a href="#user-content-readme-bottom">&#8595; Bottom</a>] [<a href="#screenshots">&#8592; Previous</a>] [<a href="#authors--contributors">&#8594; Next</a>] [<a href="#user-content-readme-top">&#8593; Top</a>]</p>
 
 ## Installation & Compatibility
@@ -135,7 +148,7 @@ Go to `Project` &#10562; `Automatic Actions` &#10562; `EmailTaskHistory > Send t
   - Compatible with [AutomaticActionUX](https://github.com/aljawaid/AutomaticActionUX), [AutoSubtasks](https://github.com/creecros/AutoSubtasks), [ApplicationBranding](https://github.com/aljawaid/ApplicationBranding)
 - **Core Files & Templates**
   - `01` Template override
-  - _No database changes_
+  - `02` plug-in-owned uninstall-data tables
 
 </details>
 <details>

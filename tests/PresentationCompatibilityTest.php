@@ -16,6 +16,8 @@ kanboardEmailHistoryAssertContains('light-dark(', $stylesheet, 'The action form 
 kanboardEmailHistoryAssertContains('transition: color var(--kbeh-transition)', $stylesheet, 'Interactive controls must retain smooth hover transitions.');
 kanboardEmailHistoryAssertContains('@media screen and (max-width: 768px)', $stylesheet, 'The form must adapt to tablet and mobile widths.');
 kanboardEmailHistoryAssertContains('#modal-box:has(.eth-form)', $stylesheet, 'The action modal must fit narrow viewports without affecting unrelated modals.');
+kanboardEmailHistoryAssertContains('.kbeh-settings-summary', $stylesheet, 'The uninstall-data summary must use the plugin theme contract.');
+kanboardEmailHistoryAssertContains('--kbeh-danger:', $stylesheet, 'Destructive uninstall guidance must remain visible in light and dark themes.');
 kanboardEmailHistoryAssertContains('min-height: 44px', $stylesheet, 'Mobile action controls must provide a practical touch target.');
 kanboardEmailHistoryAssertContains('@media (prefers-reduced-motion: reduce)', $stylesheet, 'Reduced-motion preferences must be respected.');
 kanboardEmailHistoryAssertContains('@media (forced-colors: active)', $stylesheet, 'Forced-colour mode must retain visible boundaries.');

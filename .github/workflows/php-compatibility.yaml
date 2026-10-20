@@ -66,3 +66,63 @@ jobs:
 
       - name: Run focused compatibility checks
         run: php -d error_reporting=E_ALL -d display_errors=1 plugin/tests/run.php kanboard
+
+  database-compatibility:
+    name: Database migrations
+    runs-on: ubuntu-24.04
+    services:
+      mysql:
+        image: mysql:8.4@sha256:24989179f58856db763f418010c1169fecc944e3ec1ea7e921572d83eb070f70
+        env:
+          MYSQL_DATABASE: kanboardemailhistory
+          MYSQL_ROOT_PASSWORD: kanboardemailhistory
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1 -pkanboardemailhistory"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=10
+      postgres:
+        image: postgres:18@sha256:74935e72241653ca55e0414067e6d8763aceb8a810eb51b452253ec3dcfc4336
+        env:
+          POSTGRES_DB: kanboardemailhistory
+          POSTGRES_PASSWORD: kanboardemailhistory
+          POSTGRES_USER: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd="pg_isready -U postgres -d kanboardemailhistory"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=10
+
+    steps:
+      - name: Checkout plugin
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@4424c9aab975b57bd706ee5a39c6b4334d6e4f60 # 2.40.0
+        with:
+          php-version: '8.5'
+          extensions: pdo_mysql, pdo_pgsql, pdo_sqlite
+          coverage: none
+
+      - name: Test SQLite migrations
+        run: php tests/database_migrations.php sqlite
+
+      - name: Test MySQL migrations
+        env:
+          KBEH_TEST_DSN: mysql:host=127.0.0.1;port=3306;dbname=kanboardemailhistory;charset=utf8mb4
+          KBEH_TEST_PASSWORD: kanboardemailhistory
+          KBEH_TEST_USER: root
+        run: php tests/database_migrations.php mysql
+
+      - name: Test PostgreSQL migrations
+        env:
+          KBEH_TEST_DSN: pgsql:host=127.0.0.1;port=5432;dbname=kanboardemailhistory
+          KBEH_TEST_PASSWORD: kanboardemailhistory
+          KBEH_TEST_USER: postgres
+        run: php tests/database_migrations.php postgres

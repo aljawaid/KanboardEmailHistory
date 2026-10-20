@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.9.0
+
+- NEW: Add an administrator-only prepare-for-uninstall workflow
+- NEW: Retain disabled Email History actions and their parameters for later restoration by default
+- NEW: Offer an explicit irreversible deletion policy for Email History action records
+- FIX: Prevent removed plug-in actions from causing missing-action log errors after preparation
+
 ## v2.8.1
 
 - FIX: Keep the automatic-action modal within narrow mobile viewports

@@ -207,7 +207,7 @@ function kanboardEmailHistoryMessageByAddress(array $messages, $email)
 }
 
 $plugin = $loadedPlugins[$pluginName];
-kanboardEmailHistoryAssertSame('2.8.1', $plugin->getPluginVersion(), 'The plugin version must match the corrective release.');
+kanboardEmailHistoryAssertSame('2.9.0', $plugin->getPluginVersion(), 'The plugin version must match the uninstall-data feature release.');
 kanboardEmailHistoryAssertSame('>=1.2.54', $plugin->getCompatibleVersion(), 'Compatibility must not advertise an untested Kanboard release.');
 
 $subjectCases = array(

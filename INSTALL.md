@@ -25,6 +25,17 @@ _Note: The `/plugins` folder is case-sensitive._
 - **Install using Git CLI**
   - `git clone` (_or ftp upload_) and extract the `.zip` file into this folder: `.\plugins\` (must be exact case)
 
+## Uninstallation
+
+Kanboard 1.2.54 does not call plug-in cleanup code before deleting plug-in files. Before using Kanboard's Uninstall button:
+
+1. Go to `Settings` &#10562; `Email History`.
+2. Review and save the uninstall-data policy.
+3. Choose `Prepare for uninstall` and confirm the result.
+4. Uninstall the plug-in only after preparation succeeds.
+
+The default policy disables Email History automatic actions and retains their complete configuration for restoration after reinstallation. The optional deletion policy permanently removes the plug-in's active and saved automatic-action records. Deletion is irreversible.
+
 ---
 
 Read the full [**Changelog**](../master/changelog.md "See changes") or view the [**README**](../master/README.md "View README")

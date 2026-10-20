@@ -3,13 +3,15 @@
 namespace Kanboard\Plugin\KanboardEmailHistory;
 
 use Kanboard\Core\Plugin\Base;
+use Kanboard\Core\Security\Role;
 use Kanboard\Core\Translator;
 use Kanboard\Plugin\KanboardEmailHistory\Action\EmailTaskHistory;
 
 /**
  * Registers the KanboardEmailHistory automatic action and presentation assets.
  *
- * Related test file: tests/EmailTaskHistoryTest.php.
+ * Related test files: tests/EmailTaskHistoryTest.php,
+ * tests/KanboardUninstallLifecycleTest.php, and tests/UninstallDataPolicyTest.php.
  */
 class Plugin extends Base
 {
@@ -17,7 +19,12 @@ class Plugin extends Base
     {
         $this->actionManager->register(new EmailTaskHistory($this->container));
         $this->template->setTemplateOverride('action_creation/event', 'kanboardEmailHistory:action_creation/event');
+        $this->template->hook->attach('template:config:sidebar', 'kanboardEmailHistory:config/sidebar');
         $this->hook->on('template:layout:css', array('template' => 'plugins/KanboardEmailHistory/Assets/css/kanboard-email-history.css'));
+
+        // Uninstall preparation changes application-wide action data and is restricted to administrators.
+        $this->applicationAccessMap->add('EmailHistorySettingsController', '*', Role::APP_ADMIN);
+        $this->route->addRoute('/settings/email-history', 'EmailHistorySettingsController', 'index', 'KanboardEmailHistory');
     }
 
     public function onStartup()
@@ -28,6 +35,13 @@ class Plugin extends Base
     public function getPluginName()
     {
         return 'KanboardEmailHistory';
+    }
+
+    public function getClasses()
+    {
+        return array(
+            'Plugin\KanboardEmailHistory\Model' => array('UninstallDataModel'),
+        );
     }
 
     public function getPluginDescription()
@@ -42,7 +56,7 @@ class Plugin extends Base
 
     public function getPluginVersion()
     {
-        return '2.8.1';
+        return '2.9.0';
     }
 
     public function getCompatibleVersion()
