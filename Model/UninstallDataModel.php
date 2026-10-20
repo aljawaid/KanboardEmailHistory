@@ -14,14 +14,14 @@ use Throwable;
 
 class UninstallDataModel extends Base
 {
-    const ACTION_NAME = '\\Kanboard\\Plugin\\KanboardEmailHistory\\Action\\EmailTaskHistory';
-    const ACTION_TABLE = 'actions';
-    const ACTION_PARAMETER_TABLE = 'action_has_params';
-    const BACKUP_TABLE = 'kanboard_email_history_action_backups';
-    const BACKUP_PARAMETER_TABLE = 'kanboard_email_history_action_backup_params';
-    const POLICY_SETTING = 'kanboard_email_history_uninstall_policy';
-    const POLICY_RETAIN = 'retain';
-    const POLICY_DELETE = 'delete';
+    public const ACTION_NAME = '\\Kanboard\\Plugin\\KanboardEmailHistory\\Action\\EmailTaskHistory';
+    public const ACTION_TABLE = 'actions';
+    public const ACTION_PARAMETER_TABLE = 'action_has_params';
+    public const BACKUP_TABLE = 'kanboard_email_history_action_backups';
+    public const BACKUP_PARAMETER_TABLE = 'kanboard_email_history_action_backup_params';
+    public const POLICY_SETTING = 'kanboard_email_history_uninstall_policy';
+    public const POLICY_RETAIN = 'retain';
+    public const POLICY_DELETE = 'delete';
 
     /**
      * Return the saved policy, defaulting safely for existing installations.
@@ -142,11 +142,15 @@ class UninstallDataModel extends Base
             $restored = 0;
 
             foreach ($backups as $backup) {
-                if (!$this->db->table(self::ACTION_TABLE)->insert(array(
-                    'project_id' => $backup['project_id'],
-                    'event_name' => $backup['event_name'],
-                    'action_name' => self::ACTION_NAME,
-                ))) {
+                if (
+                    !$this->db->table(self::ACTION_TABLE)->insert(
+                        array(
+                            'project_id' => $backup['project_id'],
+                            'event_name' => $backup['event_name'],
+                            'action_name' => self::ACTION_NAME,
+                        )
+                    )
+                ) {
                     throw new RuntimeException('Unable to restore a KanboardEmailHistory automatic action.');
                 }
 
@@ -157,11 +161,15 @@ class UninstallDataModel extends Base
                     ->findAll();
 
                 foreach ($parameters as $parameter) {
-                    if (!$this->db->table(self::ACTION_PARAMETER_TABLE)->insert(array(
-                        'action_id' => $actionId,
-                        'name' => $parameter['name'],
-                        'value' => $parameter['value'],
-                    ))) {
+                    if (
+                        !$this->db->table(self::ACTION_PARAMETER_TABLE)->insert(
+                            array(
+                                'action_id' => $actionId,
+                                'name' => $parameter['name'],
+                                'value' => $parameter['value'],
+                            )
+                        )
+                    ) {
                         throw new RuntimeException('Unable to restore KanboardEmailHistory action parameters.');
                     }
                 }
@@ -228,11 +236,15 @@ class UninstallDataModel extends Base
 
         $parameters = $this->actionParameterModel->getAllByAction($action['id']);
         foreach ($parameters as $name => $value) {
-            if (!$this->db->table(self::BACKUP_PARAMETER_TABLE)->insert(array(
-                'backup_id' => $backupId,
-                'name' => $name,
-                'value' => $value,
-            ))) {
+            if (
+                !$this->db->table(self::BACKUP_PARAMETER_TABLE)->insert(
+                    array(
+                        'backup_id' => $backupId,
+                        'name' => $name,
+                        'value' => $value,
+                    )
+                )
+            ) {
                 throw new RuntimeException('Unable to retain KanboardEmailHistory action parameters.');
             }
         }
