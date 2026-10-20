@@ -1,6 +1,6 @@
-{
-    "extends": "stylelint-config-standard",
-    "rules": {
+export default {
+    extends: ["stylelint-config-standard"],
+    rules: {
         "shorthand-property-no-redundant-values": null,
         "comment-whitespace-inside": [
             "always",
@@ -59,5 +59,5 @@
         "value-no-vendor-prefix": null,
         "declaration-no-important": null,
         "media-feature-range-notation": null
-    }
-}
+    },
+};
