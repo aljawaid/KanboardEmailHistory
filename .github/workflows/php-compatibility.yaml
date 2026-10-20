@@ -16,6 +16,7 @@ jobs:
   compatibility:
     name: PHP ${{ matrix.php }}
     runs-on: ubuntu-24.04
+    timeout-minutes: 15
     strategy:
       fail-fast: false
       matrix:
@@ -70,6 +71,7 @@ jobs:
   database-compatibility:
     name: Database migrations
     runs-on: ubuntu-24.04
+    timeout-minutes: 15
     services:
       mysql:
         image: mysql:8.4@sha256:24989179f58856db763f418010c1169fecc944e3ec1ea7e921572d83eb070f70
@@ -104,7 +106,7 @@ jobs:
           persist-credentials: false
 
       - name: Set up PHP
-        uses: shivammathur/setup-php@4424c9aab975b57bd706ee5a39c6b4334d6e4f60 # 2.40.0
+        uses: shivammathur/setup-php@eb7c497e18156a6bbabfef1d3a82760b9eda3962 # 2.40.0
         with:
           php-version: '8.5'
           extensions: pdo_mysql, pdo_pgsql, pdo_sqlite
