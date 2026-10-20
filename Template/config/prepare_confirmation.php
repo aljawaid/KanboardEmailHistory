@@ -1,9 +1,11 @@
 <?php
+
 /**
  * Confirms the selected retain or irreversible delete policy before preparation.
  *
  * Related test file: tests/UninstallDataPolicyTest.php.
  */
+
 ?>
 <div class="kbeh-settings">
     <h2><?= t('Confirm uninstall preparation') ?></h2>

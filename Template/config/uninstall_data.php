@@ -1,9 +1,11 @@
 <?php
+
 /**
  * Displays the uninstall-data policy, consequences, counts, and preparation controls.
  *
  * Related test file: tests/UninstallDataPolicyTest.php.
  */
+
 ?>
 <div class="kbeh-settings">
     <h2><?= t('Email History uninstall data') ?></h2>

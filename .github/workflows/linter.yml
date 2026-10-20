@@ -57,6 +57,21 @@ jobs:
           # If you hadn't done this, only a single commit would be fetched.
           fetch-depth: 0
 
+      ########################################
+      # Run the pinned PHP_CodeSniffer gate #
+      ########################################
+      - name: Set up PHP_CodeSniffer
+        uses: shivammathur/setup-php@eb7c497e18156a6bbabfef1d3a82760b9eda3962 # v2.40.0
+        with:
+          php-version: '8.5'
+          tools: phpcs:4.0.4
+          coverage: none
+
+      - name: Run PHP_CodeSniffer 4.0.4
+        run: |
+          phpcs --version
+          phpcs --standard=.github/linters/phpcs.xml --extensions=php .
+
       ################################
       # Run Linter against code base #
       ################################
@@ -94,7 +109,8 @@ jobs:
           VALIDATE_MARKDOWN: true
           VALIDATE_PHP: true
           VALIDATE_PHP_BUILTIN: true
-          VALIDATE_PHP_PHPCS: true
+          # PHP_CodeSniffer runs above at an explicit version across the full repository.
+          VALIDATE_PHP_PHPCS: false
           # VALIDATE_PHP_PHPSTAN: true
           # VALIDATE_PHP_PSALM: true
           # VALIDATE_SHELL_SHFMT: true
